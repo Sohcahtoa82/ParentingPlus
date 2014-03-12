@@ -27,18 +27,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [tutorials showTutorialOnControl:self.reward1Lbl withID:TUT_REWARD_PRICES_1 inView:self.contentView withOrientation:POINTING_NONE withCallback:@selector(showTutorialTwo) fromSender:self];
+    [tutorials showTutorialOnControl:self.RewardLbl withID:TUT_REWARD_PRICES_1 inView:self.contentView withOrientation:POINTING_NONE withCallback:@selector(showTutorialTwo) fromSender:self];
 }
 
 - (void)showTutorialTwo
 {
     int total = (int) (self.notebook.getBehaviorsCheckinTime.count * (self.notebook.getBehaviorsToChange.count + self.notebook.getBehaviorsToDoInstead.count + self.notebook.getBehaviorsToKeep.count));
-    [tutorials showCustomTutorialOnControl:self.reward1Lbl withText:[NSString stringWithFormat:@"With the number of behaviors and check-in times you've entered, your child can earn up to %d tokens per day or %d tokens per week.", total, total*7] nView:self.contentView withOrientation:POINTING_NONE withCallback:@selector(showTutorialThree) fromSender:self];
+    [tutorials showCustomTutorialOnControl:self.RewardLbl withText:[NSString stringWithFormat:@"With the number of behaviors and check-in times you've entered, your child can earn up to %d tokens per day or %d tokens per week.", total, total*7] nView:self.contentView withOrientation:POINTING_NONE withCallback:@selector(showTutorialThree) fromSender:self];
 }
 
 - (void)showTutorialThree
 {
-    [tutorials showTutorialOnControl:self.price1Txt withID:TUT_REWARD_PRICES_2 inView:self.contentView withOrientation:POINTING_UP withCallback:NULL fromSender:self];
+    [tutorials showTutorialOnControl:self.PriceLbl withID:TUT_REWARD_PRICES_2 inView:self.contentView withOrientation:POINTING_UP withCallback:NULL fromSender:self];
 }
 
 - (void)didReceiveMemoryWarning

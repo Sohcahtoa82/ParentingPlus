@@ -224,8 +224,9 @@ NSMutableArray * notificationQueue;
                                                         andData:[NSString stringWithFormat:@"device_id=%@",deviceId]
                                                           toURL:[NSString stringWithFormat:@"http://%@:%@/home/syncEnd.json",hostname,port]];
     NSDictionary * reply = [NSJSONSerialization JSONObjectWithData:replyData options:0 error:nil];
+    NSLog(@"SYNC END REPLY: %@",reply);
     if (reply != nil) {
-        [self setLastSync:[reply objectForKey:@"last_sync"] forUserId:userId];
+        //[self setLastSync:[reply objectForKey:@"last_sync"] forUserId:userId];
         return YES;
     } else {
         NSLog(@"SYNC: SyncEnd failure");
@@ -263,9 +264,8 @@ NSMutableArray * notificationQueue;
                 [record objectForKey:@"device_id"]];
     } else if ([tableName isEqualToString:@"savedreward"]) {
         //id INTEGER NOT NULL, notebooks_id INTEGER, rewards_id INTEGER, reward_status TEXT, date DAYTIME, user_id INTEGER, device_id TEXT
-        return [NSString stringWithFormat:@"INSERT INTO savedreward_sync (reward_name, price, notebooks_id, notebooks_user_id, notebooks_device_id, rewards_id, rewards_user_id, rewards_device_id, id, user_id, device_id) VALUES ('%@', %@, %@, %@, '%@', %@, %@, '%@');",
+        return [NSString stringWithFormat:@"INSERT INTO savedreward_sync (reward_name, notebooks_id, notebooks_user_id, notebooks_device_id, id, user_id, device_id) VALUES ('%@', %@, %@, '%@', %@, %@, '%@');",
                 [record objectForKey:@"reward_name"],
-                [record objectForKey:@"price"],
                 [record objectForKey:@"notebooks_id"],
                 [record objectForKey:@"notebooks_user_id"],
                 [record objectForKey:@"notebooks_device_id"],
@@ -389,7 +389,7 @@ NSMutableArray * notificationQueue;
                 [record objectForKey:@"device_id"]];
     } else if ([tableName isEqualToString:@"savedreward"]) {
         //id INTEGER NOT NULL, notebooks_id INTEGER, rewards_id INTEGER, reward_status TEXT, date DAYTIME, user_id INTEGER, device_id TEXT
-        return [NSString stringWithFormat:@"UPDATE savedreward_sync SET reward_name = '%@', price = %@, notebooks_id = %@ WHERE id = %@ AND user_id = %@ AND device_id = '%@';",
+        return [NSString stringWithFormat:@"UPDATE savedreward_sync SET reward_name = '%@', notebooks_id = %@ WHERE id = %@ AND user_id = %@ AND device_id = '%@';",
                 [record objectForKey:@"reward_name"],
                 [record objectForKey:@"price"],
                 [record objectForKey:@"notebooks_id"],
@@ -407,7 +407,7 @@ NSMutableArray * notificationQueue;
                 [record objectForKey:@"device_id"]];
     } else if ([tableName isEqualToString:@"changebehaviors"]) {
         //id INTEGER NOT NULL, badbh_id TEXT, bhname TEXT, user_id INTEGER, device_id TEXT,
-        return [NSString stringWithFormat:@"UPDATE changebehaviors_sync SET badbh_id = '%@', bhname = '%@', date = '%@', WHERE id = %@ AND user_id = %@ AND device_id = '%@';",
+        return [NSString stringWithFormat:@"UPDATE changebehaviors_sync SET badbh_id = '%@', bhname = '%@', date = '%@' WHERE id = %@ AND user_id = %@ AND device_id = '%@';",
                 [record objectForKey:@"badbh_id"],
                 [record objectForKey:@"bhname"],
                 [record objectForKey:@"date"],
@@ -818,7 +818,7 @@ NSMutableArray * notificationQueue;
 -(void) syncThreadLoop {
     while (YES) {
         [self syncDatabase];
-        [NSThread sleepForTimeInterval:10.0f]; //Sleep for 10 seconds between sync attempts
+        [NSThread sleepForTimeInterval:5.0f]; //Sleep for 10 seconds between sync attempts
     }
 }
 

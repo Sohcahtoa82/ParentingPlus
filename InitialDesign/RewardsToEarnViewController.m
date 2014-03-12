@@ -58,30 +58,6 @@ BOOL hasSavedRewardsToEarn = NO;
     [UITextField commitAnimations];
 }
 
-- (IBAction) textfieldChecker: (id)sender
-{
-    if (_reward4Txt.text.length == 0 && [_reward3Txt isFirstResponder])
-    {
-        [self fadeTextIn:_reward4Txt withLabel:nil];
-    }
-    if (_reward5Txt.text.length == 0 && [_reward4Txt isFirstResponder])
-    {
-        [self fadeTextIn:_reward5Txt withLabel:nil];
-    }
-    if (_reward6Txt.text.length == 0 && [_reward5Txt isFirstResponder])
-    {
-        [self fadeTextIn:_reward6Txt withLabel:nil];
-    }
-    if (_reward7Txt.text.length == 0 && [_reward6Txt isFirstResponder])
-    {
-        [self fadeTextIn:_reward7Txt withLabel:nil];
-    }
-    if (_reward8Txt.text.length == 0 && [_reward7Txt isFirstResponder])
-    {
-        [self fadeTextIn:_reward8Txt withLabel:nil];
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -104,7 +80,7 @@ BOOL hasSavedRewardsToEarn = NO;
     }
     else
     {
-        rectPosY = 20;
+        rectPosY = 35;
         for (UITextField *field in _contentView.subviews)
         {
             if ([field isKindOfClass:[UITextField class]])
@@ -113,29 +89,7 @@ BOOL hasSavedRewardsToEarn = NO;
                 rectPosY = rectPosY + 40;
             }
         }
-        
-        ///*
-        if (_reward4Txt.text.length == 0)
-        {
-            [_reward4Txt setAlpha:0];
-        }
-        if (_reward5Txt.text.length == 0)
-        {
-            [_reward5Txt setAlpha:0];
-        }
-        if (_reward6Txt.text.length == 0)
-        {
-            [_reward6Txt setAlpha:0];
-        }
-        if (_reward7Txt.text.length == 0)
-        {
-            [_reward7Txt setAlpha:0];
-        }
-        if (_reward8Txt.text.length == 0)
-        {
-            [_reward8Txt setAlpha:0];
-        }
-        //*/
+
     }
     
     //Gesture recogizer to hide keyboard
@@ -207,8 +161,21 @@ BOOL hasSavedRewardsToEarn = NO;
 // work in progress!
 - (IBAction)createTextField
 {
-    rectPosY = rectPosY + 40;
-    [self createTextField2:rectPosY];
+        rectPosY = rectPosY + 40;
+        [self createTextField2:rectPosY];
+}
+
+- (IBAction)createTextFieldCheck: (UITextField *) textfield
+{
+    if (textfield.text.length > 0 && textfield.tag == textFieldNumber)
+    {
+        rectPosY = rectPosY + 40;
+        [self createTextField2:rectPosY];
+    }
+    else
+    {
+        
+    }
 }
 
 -(void)createTextFieldWithText: (NSString *) textToAdd
@@ -233,10 +200,10 @@ BOOL hasSavedRewardsToEarn = NO;
     textField.returnKeyType = UIReturnKeyDone;
     textField.clearButtonMode = UITextFieldViewModeAlways;
     textField.delegate = self;
-    [textField addTarget:self action: @selector(createTextField) forControlEvents:UIControlEventEditingDidEnd];
+    [textField addTarget:self action: @selector(createTextFieldCheck:) forControlEvents:UIControlEventEditingDidEnd];
     [textField addTarget:self action: @selector(keyboardAdapter:) forControlEvents:UIControlEventEditingDidBegin];
     _nbScrollView.contentSize = CGSizeMake(320, rectPosY + 100);
-    _contentView.frame = CGRectMake(0, 0, 320, rectPosY + 150);
+    _contentView.frame = CGRectMake(0, 0, 320, _nbScrollView.frame.size.height + 250);
     [textField setAlpha:0];
     [_contentView addSubview:textField];
     [self fadeTextIn:textField withLabel:nil];
@@ -259,10 +226,10 @@ BOOL hasSavedRewardsToEarn = NO;
     textField.returnKeyType = UIReturnKeyDone;
     textField.clearButtonMode = UITextFieldViewModeAlways;
     textField.delegate = self;
-    [textField addTarget:self action: @selector(createTextField) forControlEvents:UIControlEventEditingDidEnd];
+    [textField addTarget:self action: @selector(createTextFieldCheck:) forControlEvents:UIControlEventEditingDidEnd];
     [textField addTarget:self action: @selector(keyboardAdapter:) forControlEvents:UIControlEventEditingDidBegin];
     _nbScrollView.contentSize = CGSizeMake(320, rectPosY + 100);
-    _contentView.frame = CGRectMake(0, 0, 320, _nbScrollView.frame.size.height + 150);
+    _contentView.frame = CGRectMake(0, 0, 320, _nbScrollView.frame.size.height + 250);
     [textField setAlpha:0];
     [_contentView addSubview:textField];
     [self fadeTextIn:textField withLabel:nil];
@@ -276,57 +243,6 @@ BOOL hasSavedRewardsToEarn = NO;
     // Dispose of any resources that can be recreated.
 }
 
-// Have the focus go to the next textfield after a user ends editing
-- (BOOL)textFieldReturnNext:(id)sender
-{
-    // Does the first textfield have the focus? If yes, go to the next one
-    if ([_reward1Txt isFirstResponder])
-    {
-        [_reward2Txt becomeFirstResponder];
-        return YES;
-    }
-    if ([_reward2Txt isFirstResponder])
-    {
-        [ _reward3Txt becomeFirstResponder];
-        return YES;
-    }
-    if ([_reward3Txt isFirstResponder])
-    {
-        [self fadeTextIn:_reward4Txt withLabel:nil];
-        [_reward4Txt becomeFirstResponder];
-        return YES;
-    }
-    if ([_reward4Txt isFirstResponder])
-    {
-        [self fadeTextIn:_reward5Txt withLabel:nil];
-        [_reward5Txt becomeFirstResponder];
-        return YES;
-    }
-    if ([_reward5Txt isFirstResponder])
-    {
-        [self fadeTextIn:_reward6Txt withLabel:nil];
-        [_reward6Txt becomeFirstResponder];
-        return YES;
-    }
-    if ([_reward6Txt isFirstResponder])
-    {
-        [self fadeTextIn:_reward7Txt withLabel:nil];
-        [_reward7Txt becomeFirstResponder];
-        return YES;
-    }
-    if ([_reward7Txt isFirstResponder])
-    {
-        [self fadeTextIn:_reward8Txt withLabel:nil];
-        [_reward8Txt becomeFirstResponder];
-        return YES;
-    }
-    else  // No more text fields to fill in, hide the keyboard
-    {
-        [_reward8Txt resignFirstResponder];
-        NSLog(@"last textfield done");
-    }
-    return NO;
-}
 
 - (void)saveAllTextFields
 {
@@ -409,6 +325,7 @@ BOOL hasSavedRewardsToEarn = NO;
     }
 }
 
+/*
 - (void)LoadRewardList
 {
     NSMutableArray *rewardList = [[NSMutableArray alloc] init];
@@ -425,6 +342,7 @@ BOOL hasSavedRewardsToEarn = NO;
     if ([rewardList count] > 7) oldreward8 = _reward8Txt.text = rewardList[7][@"reward_name"];
     
 }
+ */
 
 - (IBAction)saveAndContinueClick:(id)sender {
     

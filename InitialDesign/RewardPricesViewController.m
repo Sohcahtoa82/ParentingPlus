@@ -66,73 +66,6 @@ BOOL hasSavedRewardPrices = NO;
         }
         
     }
-    // load labels and text boxes based on rewards to earn
-    // hide labels and text boxes if unneeded
-    if (_reward1.length == 0) {
-        _reward1Lbl.hidden = YES;
-        _price1Txt.hidden = YES;
-    } else {
-        _reward1Lbl.text = _reward1;
-    }
-    
-    if (_reward2.length == 0) {
-        _reward2Lbl.hidden = YES;
-        _price2Txt.hidden = YES;
-    } else {
-        _reward2Lbl.text = _reward2;
-    }
-    
-    if (_reward3.length == 0) {
-        _reward3Lbl.hidden = YES;
-        _price3Txt.hidden = YES;
-    } else {
-        _reward3Lbl.text = _reward3;
-    }
-    
-    if (_reward4.length == 0) {
-        _reward4Lbl.hidden = YES;
-        _price4Txt.hidden = YES;
-    } else {
-        _reward4Lbl.text = _reward4;
-    }
-    
-    if (_reward5.length == 0) {
-        _reward5Lbl.hidden = YES;
-        _price5Txt.hidden = YES;
-    } else {
-        _reward5Lbl.text = _reward5;
-    }
-    
-    if (_reward6.length == 0) {
-        _reward6Lbl.hidden = YES;
-        _price6Txt.hidden = YES;
-    } else {
-        _reward6Lbl.text = _reward6;
-    }
-    
-    if (_reward7.length == 0) {
-        _reward7Lbl.hidden = YES;
-        _price7Txt.hidden = YES;
-    } else {
-        _reward7Lbl.text = _reward7;
-    }
-    
-    if (_reward8.length == 0) {
-        _reward8Lbl.hidden = YES;
-        _price8Txt.hidden = YES;
-    } else {
-        _reward8Lbl.text = _reward8;
-    }
-
-
-    /*
-    if ([[_notebook getRewards] count] > 0) {
-        if ([[_notebook getRewards][0][@"price"] length] > 0) {
-            [self LoadRewardPrice];
-            hasSavedRewardPrices = YES;
-        }
-    }
-     */
     
     //Gesture recogizer to hide keyboard
     UITapGestureRecognizer *tapScroll = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(keyboardHide)];
@@ -243,7 +176,7 @@ BOOL hasSavedRewardPrices = NO;
     [textField addTarget:self action: @selector(keyboardAdapter:) forControlEvents:UIControlEventEditingDidBegin];
     
     _nbScrollView.contentSize = CGSizeMake(320, rectPosY + 100);
-    _contentView.frame = CGRectMake(0, 0, 320, rectPosY + 150);
+    _contentView.frame = CGRectMake(0, 0, 320, _nbScrollView.frame.size.height + 150);
     [textField setAlpha:0];
     [_contentView addSubview:textField];
     [self fadeTextIn:textField withLabel:nil];
@@ -289,24 +222,6 @@ BOOL hasSavedRewardPrices = NO;
     }
 }
 
-
-// Load the values from the DB to be displayed upon reviewing a notebook.
-- (void)LoadRewardPrice
-{
-   /* NSMutableArray *rewardList = [[NSMutableArray alloc]init];
-    rewardList = [_notebook getRewards];
-    _price2Txt.text = _price3Txt.text = _price4Txt.text = _price8Txt.text = @"";
-    _price5Txt.text = _price6Txt.text = _price7Txt.text = @"";
-    if ([rewardList[0][@"price"] length] > 0) oldPrice1 = _price1Txt.text = rewardList[0][@"price"];
-    if ([rewardList count] > 1) oldPrice2 = _price2Txt.text = rewardList[1][@"price"];
-    if ([rewardList count] > 2) oldPrice3 = _price3Txt.text = rewardList[2][@"price"];
-    if ([rewardList count] > 3) oldPrice4 = _price4Txt.text = rewardList[3][@"price"];
-    if ([rewardList count] > 4) oldPrice5 = _price5Txt.text = rewardList[4][@"price"];
-    if ([rewardList count] > 5) oldPrice6 = _price6Txt.text = rewardList[5][@"price"];
-    if ([rewardList count] > 6) oldPrice7 = _price7Txt.text = rewardList[6][@"price"];
-    if ([rewardList count] > 7) oldPrice8 = _price8Txt.text = rewardList[7][@"price"]; */
-}
-
 - (IBAction)closeButton:(id)sender {
     
     [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
@@ -315,60 +230,6 @@ BOOL hasSavedRewardPrices = NO;
 
 - (IBAction)saveAndContinueClick:(id)sender {
     
-    /*
-    if ([oldPrice1 isEqualToString:_price1Txt.text] == FALSE && ([oldPrice1 length] != 0 || [_price1Txt.text length] != 0)) {
-        [_notebook updateRewardPriceWithName:_reward1 toNewPrice:_price1Txt.text fromNotebook:_notebook];
-    }
-    if ([oldPrice2 isEqualToString:_price2Txt.text] == FALSE && ([oldPrice2 length] != 0 || [_price2Txt.text length] != 0)){
-        [_notebook updateRewardPriceWithName:_reward2 toNewPrice:_price2Txt.text fromNotebook:_notebook];
-    }
-    if ([oldPrice3 isEqualToString:_price3Txt.text] == FALSE && ([oldPrice3 length] != 0 || [_price3Txt.text length] != 0)){
-        [_notebook updateRewardPriceWithName:_reward3 toNewPrice:_price3Txt.text fromNotebook:_notebook];
-    }
-    if ([oldPrice4 isEqualToString:_price4Txt.text] == FALSE && ([oldPrice4 length] != 0 || [_price4Txt.text length] != 0)){
-        [_notebook updateRewardPriceWithName:_reward4 toNewPrice:_price4Txt.text fromNotebook:_notebook];
-    }
-    if ([oldPrice5 isEqualToString:_price5Txt.text] == FALSE && ([oldPrice5 length] != 0 || [_price5Txt.text length] != 0)) {
-        [_notebook updateRewardPriceWithName:_reward5 toNewPrice:_price5Txt.text fromNotebook:_notebook];
-    }
-    if ([oldPrice6 isEqualToString:_price6Txt.text] == FALSE && ([oldPrice6 length] != 0 || [_price6Txt.text length] != 0)){
-        [_notebook updateRewardPriceWithName:_reward6 toNewPrice:_price6Txt.text fromNotebook:_notebook];
-    }
-    if ([oldPrice7 isEqualToString:_price7Txt.text] == FALSE && ([oldPrice7 length] != 0 || [_price7Txt.text length] != 0)){
-        [_notebook updateRewardPriceWithName:_reward7 toNewPrice:_price7Txt.text fromNotebook:_notebook];
-    }
-    if ([oldPrice8 isEqualToString:_price8Txt.text] == FALSE && ([oldPrice8 length] != 0 || [_price8Txt.text length] != 0)){
-        [_notebook updateRewardPriceWithName:_reward8 toNewPrice:_price8Txt.text fromNotebook:_notebook];
-    }
-    NSLog(@"updated prices");
-    
-    if (_price2Txt.text.length > 0) {
-        oldPrice1 = [NSString stringWithFormat:@"%@", _price1Txt.text];
-    }
-    if (_price2Txt.text.length > 0) {
-        oldPrice2 = [NSString stringWithFormat:@"%@", _price2Txt.text];
-    }
-    if (_price3Txt.text.length > 0) {
-        oldPrice3 = [NSString stringWithFormat:@"%@", _price3Txt.text];
-    }
-    if (_price4Txt.text.length > 0) {
-        oldPrice4 = [NSString stringWithFormat:@"%@", _price4Txt.text];
-    }
-    if (_price5Txt.text.length > 0) {
-        oldPrice5 = [NSString stringWithFormat:@"%@", _price5Txt.text];
-    }
-    if (_price6Txt.text.length > 0) {
-        oldPrice6 = [NSString stringWithFormat:@"%@", _price6Txt.text];
-    }
-    if (_price7Txt.text.length > 0) {
-        oldPrice7 = [NSString stringWithFormat:@"%@", _price7Txt.text];
-    }
-    if (_price8Txt.text.length > 0) {
-        oldPrice8 = [NSString stringWithFormat:@"%@", _price8Txt.text];
-    }
-     */
-    
-    //[self saveAllTextFields];
     [self shouldPerformSegueWithIdentifier:@"saveRewardPricesGoToCompleteNotebook" sender:self];
 }
 

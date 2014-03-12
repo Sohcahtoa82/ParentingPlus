@@ -527,6 +527,10 @@
     
     DBManager * sharedDB = [DBManager sharedDBManager];
     //NSMutableArray *array = [self getGoodBehaviorsLastest];
+    
+    // Updated by Basem
+    // We don't need this anymore. I've changed the sql query to do all the work.
+    /*
     NSMutableArray *array = [self getGoodBehaviorsBeforeTo:date];
     for (id one in array) {
         [one setValue:@"no-sticker-100px.png" forKey:@"time1"];
@@ -534,11 +538,12 @@
         [one setValue:@"no-sticker-100px.png" forKey:@"time3"];
         [one setValue:@"no-sticker-100px.png" forKey:@"time4"];
     }
-    
+    */
     NSMutableArray *table = [[NSMutableArray alloc] init];
     sqlite3_stmt *checkstatement;
     sqlite3 * kidzplanDB = [sharedDB getAndLockDatabase];
-    NSString *querySQL = [NSString stringWithFormat: @"SELECT bhname, time1, time2, time3, time4 FROM goodbehaviors G, trackgoodbehaviors T WHERE G.id = T.goodbehaviors_id AND time_record = '%@' AND T.notebooks_id = '%@';",date,self.getCurrentNotebook];
+    NSString *querySQL = [NSString stringWithFormat:
+                          @"SELECT bhname, ifnull(time1,'no-sticker-100px.png') time1, ifnull(time2,'no-sticker-100px.png') time2, ifnull(time3,'no-sticker-100px.png') time3, ifnull(time4,'no-sticker-100px.png') time4, G.id FROM goodbehaviors G left join trackgoodbehaviors T on G.id = T.goodbehaviors_id and T.time_record = '%@' WHERE G.date  between ( SELECT max(date) FROM goodbehaviors where date <= '%@' AND notebooks_id = '%@') AND '%@' AND G.notebooks_id = '%@' order by G.id",date,date, self.getCurrentNotebook,date,self.getCurrentNotebook];
     
     const char *query_stmt = [querySQL UTF8String];
     
@@ -553,7 +558,9 @@
             NSString *time2 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 2)];
             NSString *time3 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 3)];
             NSString *time4 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 4)];
+            NSString *behID = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 5)];
             
+            [oneRecord setObject:behID forKey:@"id"];
             [oneRecord setObject:bhname forKey:@"bhname"];
             [oneRecord setObject:time1  forKey:@"time1"];
             [oneRecord setObject:time2 forKey:@"time2"];
@@ -565,6 +572,9 @@
         sqlite3_finalize(checkstatement);
     }
     [sharedDB unlockDatabase];
+    // Updated by Basem
+    // We also don't need this after changing the sql query above.
+    /*
     if ([table count] > 0) {
         for (id array_obj in array) {
             for (id table_obj in table) {
@@ -576,12 +586,18 @@
                 }
             }
         }
-    }
-    return array;
+     }
+     return array;
+     */
+    return table;
 }
 -(NSMutableArray *)getTrackThingsToDoInsteadWhen:(NSString *)date {
     
     DBManager * sharedDB = [DBManager sharedDBManager];
+    
+    // Updated by Basem
+    // We don't need this anymore. I've changed the sql query to do all the work.
+    /*
     NSMutableArray *array = [self getChangeBehaviorsBeforeTo:date];
     for (id one in array) {
         [one setValue:@"no-sticker-100px.png" forKey:@"time1"];
@@ -589,13 +605,17 @@
         [one setValue:@"no-sticker-100px.png" forKey:@"time3"];
         [one setValue:@"no-sticker-100px.png" forKey:@"time4"];
     }
-    
+    */
     NSMutableArray *table = [[NSMutableArray alloc] init];
     
     sqlite3_stmt *checkstatement;
     sqlite3 * kidzplanDB = [sharedDB getAndLockDatabase];
-    NSString *querySQL = [NSString stringWithFormat: @"SELECT BB.name, CB.bhname, time1, time2, time3, time4 FROM badbehaviors BB, trackchangebehaviors TC, changebehaviors CB WHERE TC.changebehaviors_id = CB.id AND CB.badbh_id = BB.id AND time_record = '%@' AND TC.notebooks_id = '%@';",date,self.getCurrentNotebook];
     
+    NSString *querySQL = [NSString stringWithFormat:
+                          @"SELECT BB.name, CB.bhname, ifnull(time1,'no-sticker-100px.png') time1, ifnull(time2,'no-sticker-100px.png') time2, ifnull(time3,'no-sticker-100px.png') time3, ifnull(time4,'no-sticker-100px.png') time4, CB.id FROM badbehaviors BB join changebehaviors CB on CB.badbh_id = BB.id left join trackchangebehaviors TC on TC.changebehaviors_id = CB.id AND time_record = '%@' WHERE BB.date  between ( SELECT max(date) FROM badbehaviors where date <= '%@' AND notebooks_id = '%@') AND '%@' AND BB.notebooks_id = '%@' order by CB.id",date,date, self.getCurrentNotebook,date,self.getCurrentNotebook];
+    /*
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT BB.name, CB.bhname, time1, time2, time3, time4 FROM badbehaviors BB, trackchangebehaviors TC, changebehaviors CB WHERE TC.changebehaviors_id = CB.id AND CB.badbh_id = BB.id AND time_record = '%@' AND TC.notebooks_id = '%@';",date,self.getCurrentNotebook];
+    */
     const char *query_stmt = [querySQL UTF8String];
     
     if (sqlite3_prepare_v2(kidzplanDB,query_stmt, -1, &checkstatement, NULL) == SQLITE_OK)
@@ -610,9 +630,11 @@
             NSString *time2 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 3)];
             NSString *time3 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 4)];
             NSString *time4 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 5)];
+            NSString *behID = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 6)];
             
-            [oneRecord setObject:badname forKey:@"badname"];
-            [oneRecord setObject:insteadname forKey:@"insteadname"];
+            [oneRecord setObject:behID forKey:@"id"];
+            [oneRecord setObject:badname forKey:@"badBehavior_name"];
+            [oneRecord setObject:insteadname forKey:@"bhname"];
             [oneRecord setObject:time1  forKey:@"time1"];
             [oneRecord setObject:time2 forKey:@"time2"];
             [oneRecord setObject:time3 forKey:@"time3"];
@@ -625,6 +647,9 @@
     [sharedDB unlockDatabase];
     //NSLog(@"success to get all trackchangebehaviors");
     
+    // Updated by Basem
+    // We also don't need this after changing the sql query above.
+    /*
     if ([table count] > 0) {
         for (id array_obj in array) {
             for (id table_obj in table) {
@@ -639,6 +664,8 @@
         }
     }
     return array;
+     */
+    return table;
 }
 -(BOOL)setTrackGoodBehaviorWithTime:(NSString *)date andGoodBehaviorid:(NSString *)goodBehavior_id andTime1:(NSString *)time1 andTime2:(NSString *)time2 andTime3:(NSString *)time3 andTime4:(NSString *)time4 {
     DBManager * sharedDB = [DBManager sharedDBManager];

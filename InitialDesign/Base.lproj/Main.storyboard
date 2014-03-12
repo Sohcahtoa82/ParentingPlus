@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -2487,14 +2487,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="xm0-is-SrR" userLabel="Round Style Text Field - Enter Reward04">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="xm0-is-SrR" userLabel="Round Style Text Field - Enter Reward04">
                                                 <rect key="frame" x="20" y="78" width="245" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <connections>
-                                                    <action selector="textFieldReturnNext:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="KO0-e4-jHE"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="G4M-4T-j4x"/>
+                                                    <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="3nS-F0-NFN"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="P4E-lf-Fyb">
@@ -2511,86 +2510,23 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <action selector="infoClick:" destination="swn-qQ-L2S" eventType="touchUpInside" id="k5L-yi-ETi"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="N1A-VK-1Qf" userLabel="Round Style Text Field - Enter Reward02">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="N1A-VK-1Qf" userLabel="Round Style Text Field - Enter Reward02">
                                                 <rect key="frame" x="20" y="116" width="281" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="textFieldReturnNext:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="u46-VZ-q3W"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="SJI-XE-YJs"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="5sd-7e-kQO" userLabel="Round Style Text Field - Enter Reward03">
-                                                <rect key="frame" x="20" y="154" width="280" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="textFieldReturnNext:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="2gH-7U-CXy"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="touchDown" id="fYP-hV-AuY"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="oJA-gq-73S"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="Nfm-ml-NaP" userLabel="Round Style Text Field - Enter Reward01">
-                                                <rect key="frame" x="20" y="192" width="281" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="798-eP-lUV"/>
-                                                    <action selector="textFieldReturnNext:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="YFm-DB-ERb"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="jIU-2F-cY6"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="zcC-N9-Zdz"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="k83-QK-EuX" userLabel="Round Style Text Field - Enter Reward05">
-                                                <rect key="frame" x="20" y="230" width="281" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="C2T-Lo-dCy"/>
-                                                    <action selector="textFieldReturnNext:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="AXD-qN-0wD"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="5Cc-8y-5u8"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="rA8-3X-Y6Q"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="4i8-sm-FNM" userLabel="Round Style Text Field - Enter Reward06">
-                                                <rect key="frame" x="20" y="268" width="280" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="drd-DD-VKi"/>
-                                                    <action selector="textFieldReturnNext:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="EDX-AN-xQv"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="3LV-lz-CdE"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="8ja-NW-OjZ"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="e4H-cy-cwa" userLabel="Round Style Text Field - Enter Reward07">
-                                                <rect key="frame" x="20" y="306" width="281" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="QYj-YU-0zX"/>
-                                                    <action selector="textFieldReturnNext:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="RkI-za-fW7"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="e9E-xp-out"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="uq5-Uh-9O2"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="v7Z-lG-0RB" userLabel="Round Style Text Field - Enter Reward08">
-                                                <rect key="frame" x="20" y="344" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <connections>
-                                                    <action selector="createTextField" destination="NLA-xO-8oJ" eventType="editingDidEnd" id="oSB-Ul-CVW"/>
-                                                    <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="Dzy-aA-dNL"/>
-                                                    <action selector="textFieldReturnNext:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="Icd-YH-Gkx"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="EuY-mg-tYI"/>
-                                                    <action selector="textfieldChecker:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="i99-yv-gPz"/>
+                                                    <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="bMa-kI-siG"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward" minimumFontSize="17" clearButtonMode="whileEditing" id="5sd-7e-kQO" userLabel="Round Style Text Field - Enter Reward03">
+                                                <rect key="frame" x="20" y="154" width="280" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="createTextFieldCheck:" destination="NLA-xO-8oJ" eventType="editingDidEnd" id="9Xd-Hc-FGb"/>
+                                                    <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="hew-bK-Vf6"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -2615,11 +2551,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="reward1Txt" destination="xm0-is-SrR" id="znT-a9-CIH"/>
                         <outlet property="reward2Txt" destination="N1A-VK-1Qf" id="ycn-gN-ndi"/>
                         <outlet property="reward3Txt" destination="5sd-7e-kQO" id="HHr-pR-aIw"/>
-                        <outlet property="reward4Txt" destination="Nfm-ml-NaP" id="o7d-Nx-CIt"/>
-                        <outlet property="reward5Txt" destination="k83-QK-EuX" id="Wpx-b0-I9K"/>
-                        <outlet property="reward6Txt" destination="4i8-sm-FNM" id="acS-UG-9t8"/>
-                        <outlet property="reward7Txt" destination="e4H-cy-cwa" id="mCe-ng-ryU"/>
-                        <outlet property="reward8Txt" destination="v7Z-lG-0RB" id="JGa-OV-Qlj"/>
                         <outlet property="saveAndContinue" destination="0mL-Md-Qla" id="qMN-Ai-QkA"/>
                     </connections>
                 </viewController>
@@ -2676,142 +2607,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="xqR-4z-FSc">
-                                                <rect key="frame" x="229" y="60" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="TQx-Cb-awS" eventType="editingDidBegin" id="JIu-J1-lno"/>
-                                                    <action selector="textFieldReturnNext:" destination="TQx-Cb-awS" eventType="editingDidEndOnExit" id="1Jg-pf-vxW"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="67c-d9-7No">
-                                                <rect key="frame" x="229" y="99" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="TQx-Cb-awS" eventType="editingDidBegin" id="tsb-F7-cJY"/>
-                                                    <action selector="textFieldReturnNext:" destination="TQx-Cb-awS" eventType="editingDidEndOnExit" id="wnL-Hy-uT7"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="FmE-aY-hcd">
-                                                <rect key="frame" x="229" y="137" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="TQx-Cb-awS" eventType="editingDidBegin" id="qyp-oK-CKu"/>
-                                                    <action selector="textFieldReturnNext:" destination="TQx-Cb-awS" eventType="editingDidEndOnExit" id="oQf-BH-eEj"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="4xu-qL-sCf">
-                                                <rect key="frame" x="229" y="175" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="TQx-Cb-awS" eventType="editingDidBegin" id="Vgb-pv-YXn"/>
-                                                    <action selector="textFieldReturnNext:" destination="TQx-Cb-awS" eventType="editingDidEndOnExit" id="oz9-N7-VZK"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="LMN-MP-UsO">
-                                                <rect key="frame" x="229" y="213" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="TQx-Cb-awS" eventType="editingDidBegin" id="2ae-ab-RYH"/>
-                                                    <action selector="textFieldReturnNext:" destination="TQx-Cb-awS" eventType="editingDidEndOnExit" id="paR-30-AOc"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Vn9-En-tea">
-                                                <rect key="frame" x="229" y="251" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="TQx-Cb-awS" eventType="editingDidBegin" id="nlp-m3-kIw"/>
-                                                    <action selector="textFieldReturnNext:" destination="TQx-Cb-awS" eventType="editingDidEndOnExit" id="Dn9-aj-w6J"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="z6Z-bh-35s">
-                                                <rect key="frame" x="229" y="289" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="TQx-Cb-awS" eventType="editingDidBegin" id="mxB-7e-B9p"/>
-                                                    <action selector="textFieldReturnNext:" destination="TQx-Cb-awS" eventType="editingDidEndOnExit" id="1np-be-48I"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="AYx-Va-KHf">
-                                                <rect key="frame" x="229" y="327" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
-                                                <connections>
-                                                    <action selector="keyboardAdapter:" destination="TQx-Cb-awS" eventType="editingDidBegin" id="kJd-Rn-RAq"/>
-                                                    <action selector="textFieldReturnNext:" destination="TQx-Cb-awS" eventType="editingDidEndOnExit" id="YMm-py-N1a"/>
-                                                </connections>
-                                            </textField>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wWR-41-b5q">
-                                                <rect key="frame" x="20" y="60" width="201" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="niV-js-OW7">
-                                                <rect key="frame" x="20" y="99" width="201" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward 3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FBc-JT-9JQ">
-                                                <rect key="frame" x="20" y="137" width="201" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2dQ-97-1eb">
-                                                <rect key="frame" x="20" y="175" width="201" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gOS-Ch-37E">
-                                                <rect key="frame" x="20" y="213" width="201" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gWN-lh-WLJ">
-                                                <rect key="frame" x="20" y="252" width="201" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward 7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fxy-ut-Swr">
-                                                <rect key="frame" x="20" y="290" width="201" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward 8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xhd-k7-wY0">
-                                                <rect key="frame" x="20" y="328" width="201" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.16066029770000001" green="0.61243022629999999" blue="0.8087930485" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -2829,24 +2624,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="PriceLbl" destination="Fyz-z2-r1E" id="9zz-me-THZ"/>
+                        <outlet property="RewardLbl" destination="5ek-5K-SkA" id="kqq-pd-tvw"/>
                         <outlet property="contentView" destination="6bU-iT-9Ts" id="ScD-1D-TZL"/>
                         <outlet property="nbScrollView" destination="m5m-nV-BPa" id="AoY-aX-XMC"/>
-                        <outlet property="price1Txt" destination="xqR-4z-FSc" id="09y-go-7Vp"/>
-                        <outlet property="price2Txt" destination="67c-d9-7No" id="e5F-XK-iDi"/>
-                        <outlet property="price3Txt" destination="FmE-aY-hcd" id="hvI-4B-xm8"/>
-                        <outlet property="price4Txt" destination="4xu-qL-sCf" id="iFo-SH-v0F"/>
-                        <outlet property="price5Txt" destination="LMN-MP-UsO" id="j8v-nv-aef"/>
-                        <outlet property="price6Txt" destination="Vn9-En-tea" id="4d6-zF-a9F"/>
-                        <outlet property="price7Txt" destination="z6Z-bh-35s" id="RaV-XN-CQk"/>
-                        <outlet property="price8Txt" destination="AYx-Va-KHf" id="HfL-Pk-taT"/>
-                        <outlet property="reward1Lbl" destination="wWR-41-b5q" id="XT3-zB-Zbk"/>
-                        <outlet property="reward2Lbl" destination="niV-js-OW7" id="KzQ-m8-TyB"/>
-                        <outlet property="reward3Lbl" destination="FBc-JT-9JQ" id="Mae-dF-Kfb"/>
-                        <outlet property="reward4Lbl" destination="2dQ-97-1eb" id="2Hl-rd-4LG"/>
-                        <outlet property="reward5Lbl" destination="gOS-Ch-37E" id="sO8-2T-wm7"/>
-                        <outlet property="reward6Lbl" destination="gWN-lh-WLJ" id="cdI-Bc-wji"/>
-                        <outlet property="reward7Lbl" destination="fxy-ut-Swr" id="19Z-vR-OdL"/>
-                        <outlet property="reward8Lbl" destination="Xhd-k7-wY0" id="Log-ox-fEB"/>
                         <outlet property="saveAndContinue" destination="xIf-jA-Y3D" id="RhI-es-Oa9"/>
                     </connections>
                 </viewController>

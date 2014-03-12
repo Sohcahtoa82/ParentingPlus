@@ -204,7 +204,7 @@ BOOL sucess;
     NSString *oldname = @"";
     for (id obj in goodBehavior) {
         if([obj[@"bhname"] isEqualToString:oldname] == FALSE) {
-            NSString *querySQL = [NSString stringWithFormat: @"INSERT INTO goodbehaviors (bhname, notebooks_id, user_id, date) VALUES ('%@','%@','%@',(SELECT date('now')))", obj[@"bhname"], self.getCurrentNotebook,self.getCurrentUser];
+            NSString *querySQL = [NSString stringWithFormat: @"INSERT INTO goodbehaviors (bhname, notebooks_id, user_id, date) VALUES ('%@','%@','%@',(SELECT date('now','localtime')))", obj[@"bhname"], self.getCurrentNotebook,self.getCurrentUser];
             sucess = [sharedDB insertWithQuery:querySQL];
             if (sucess) {
                 oldname = [NSString stringWithString:obj[@"bhname"]];
@@ -222,7 +222,7 @@ BOOL sucess;
     for (id obj in badBehavior) {
         if([obj[@"name"] isEqualToString:oldname] == FALSE) {
             if (obj[@"name"] && !obj[@"reminders"]) {
-                NSString *querySQL = [NSString stringWithFormat: @"INSERT INTO badbehaviors (name, notebooks_id, user_id, date) VALUES ('%@', '%@','%@', (SELECT date('now')))", obj[@"name"], self.getCurrentNotebook,self.getCurrentUser];
+                NSString *querySQL = [NSString stringWithFormat: @"INSERT INTO badbehaviors (name, notebooks_id, user_id, date) VALUES ('%@', '%@','%@', (SELECT date('now','localtime')))", obj[@"name"], self.getCurrentNotebook,self.getCurrentUser];
                 sucess = [sharedDB insertWithQuery:querySQL];
                 if (sucess) {
                     oldname = [NSString stringWithString:obj[@"name"]];
@@ -232,7 +232,7 @@ BOOL sucess;
                 NSString *queryID = [NSString stringWithFormat: @"SELECT id FROM badbehaviors WHERE name='%@' AND notebooks_id='%@'",obj[@"name"], self.getCurrentNotebook];
                 NSString *myid = [function getTableIdByQuery:queryID];
                 if ([myid length] == 0) {
-                    NSString *queryInsert = [NSString stringWithFormat: @"INSERT INTO badbehaviors (name, reminders, notebooks_id, user_id, date) VALUES ('%@', '%@','%@','%@', (SELECT date('now')))", obj[@"name"], obj[@"reminders"], self.getCurrentNotebook,self.getCurrentUser];
+                    NSString *queryInsert = [NSString stringWithFormat: @"INSERT INTO badbehaviors (name, reminders, notebooks_id, user_id, date) VALUES ('%@', '%@','%@','%@', (SELECT date('now','localtime')))", obj[@"name"], obj[@"reminders"], self.getCurrentNotebook,self.getCurrentUser];
                     sucess = [sharedDB insertWithQuery:queryInsert];
                     oldname = [NSString stringWithString:obj[@"name"]];
                     myid = [function getTableIdByQuery:queryID];
@@ -259,7 +259,7 @@ BOOL sucess;
         NSString *querySQL = [NSString stringWithFormat: @"SELECT id FROM badbehaviors WHERE name='%@' AND notebooks_id='%@'",obj[@"badBehavior_name"], self.getCurrentNotebook];
         NSString *myid = [function getTableIdByQuery:querySQL];
         if ([myid isEqualToString:oldID] == FALSE) {
-            querySQL = [NSString stringWithFormat: @"INSERT INTO changebehaviors (badbh_id, bhname, notebooks_id, user_id, date) VALUES ('%@','%@','%@', '%@', (SELECT date('now')))", myid, @"Less often/Not at all", self.getCurrentNotebook, self.getCurrentUser];
+            querySQL = [NSString stringWithFormat: @"INSERT INTO changebehaviors (badbh_id, bhname, notebooks_id, user_id, date) VALUES ('%@','%@','%@', '%@', (SELECT date('now','localtime')))", myid, @"Less often/Not at all", self.getCurrentNotebook, self.getCurrentUser];
             sucess = [sharedDB insertWithQuery:querySQL];
             if (sucess) {
                 oldID = [NSString stringWithString:myid];
@@ -267,7 +267,7 @@ BOOL sucess;
             }
         }
         if ([obj[@"bhname"] isEqualToString:oldName] == FALSE) {
-            querySQL = [NSString stringWithFormat: @"INSERT INTO changebehaviors (badbh_id, bhname, notebooks_id, user_id, date) VALUES ('%@','%@','%@', '%@', (SELECT date('now')))", myid, obj[@"bhname"], self.getCurrentNotebook, self.getCurrentUser];
+            querySQL = [NSString stringWithFormat: @"INSERT INTO changebehaviors (badbh_id, bhname, notebooks_id, user_id, date) VALUES ('%@','%@','%@', '%@', (SELECT date('now','localtime')))", myid, obj[@"bhname"], self.getCurrentNotebook, self.getCurrentUser];
             sucess = [sharedDB insertWithQuery:querySQL];
             if (sucess) {
                 oldName = [NSString stringWithString:obj[@"bhname"]];
@@ -380,11 +380,11 @@ BOOL sucess;
     DBManager * sharedDB = [DBManager sharedDBManager];
     OutlineDBFunction *function = [[OutlineDBFunction alloc] init];
     for (int i = 0; i < oldArray.count; i++) {
-        NSString * querySQL = [NSString stringWithFormat: @"SELECT id FROM goodbehaviors WHERE bhname = '%@' AND notebooks_id='%@' AND date = (SELECT date('now'))", oldArray[i], self.getCurrentNotebook];
+        NSString * querySQL = [NSString stringWithFormat: @"SELECT id FROM goodbehaviors WHERE bhname = '%@' AND notebooks_id='%@' AND date = (SELECT date('now','localtime'))", oldArray[i], self.getCurrentNotebook];
         NSString *oldid = [function getTableIdByQuery:querySQL];
         if ([oldid length] == 0) {
             if ([newArray[i] length] > 0){
-                querySQL = [NSString stringWithFormat: @"INSERT INTO goodbehaviors (bhname, notebooks_id, user_id, date) VALUES ('%@', '%@', '%@', (SELECT date('now')))",newArray[i], self.getCurrentNotebook, self.getCurrentUser];
+                querySQL = [NSString stringWithFormat: @"INSERT INTO goodbehaviors (bhname, notebooks_id, user_id, date) VALUES ('%@', '%@', '%@', (SELECT date('now','localtime')))",newArray[i], self.getCurrentNotebook, self.getCurrentUser];
                 success = [sharedDB insertWithQuery:querySQL];
             }
         } else {
@@ -406,12 +406,12 @@ BOOL sucess;
     DBManager * sharedDB = [DBManager sharedDBManager];
     OutlineDBFunction *function = [[OutlineDBFunction alloc] init];
     for (int i = 0; i < oldArray.count; i++) {
-        NSString *querySQL = [NSString stringWithFormat: @"SELECT id FROM badbehaviors WHERE name='%@' AND notebooks_id='%@' AND date = (SELECT date('now'))", oldArray[i], self.getCurrentNotebook];
+        NSString *querySQL = [NSString stringWithFormat: @"SELECT id FROM badbehaviors WHERE name='%@' AND notebooks_id='%@' AND date = (SELECT date('now','localtime'))", oldArray[i], self.getCurrentNotebook];
         NSString *myid = [function getTableIdByQuery:querySQL];
         if ([myid length] == 0) {
             if ([newArray[i] length] > 0){
                 NSString *nextBBid = [NSString stringWithFormat:@"%d",[function getAfterMaxIDFromTable:@"badbehaviors"]];
-                querySQL = [NSString stringWithFormat: @"INSERT INTO badbehaviors (name, notebooks_id, user_id, date) VALUES ('%@','%@','%@', (SELECT date('now')))", newArray[i], self.getCurrentNotebook,self.getCurrentUser];
+                querySQL = [NSString stringWithFormat: @"INSERT INTO badbehaviors (name, notebooks_id, user_id, date) VALUES ('%@','%@','%@', (SELECT date('now','localtime')))", newArray[i], self.getCurrentNotebook,self.getCurrentUser];
                 sucess = [sharedDB insertWithQuery:querySQL];
                 if (sucess) {
                     querySQL = [NSString stringWithFormat: @"SELECT id FROM badbehaviors WHERE name='%@' AND notebooks_id='%@'", oldArray[i], self.getCurrentNotebook];
@@ -421,7 +421,7 @@ BOOL sucess;
                         querySQL = [NSString stringWithFormat: @"SELECT id FROM changebehaviors WHERE badbh_id = '%@' AND notebooks_id = '%@'", oldbadid, self.getCurrentNotebook];
                         arrayID = [sharedDB selectQuery:querySQL];
                         for (id change_id in arrayID) {
-                            querySQL = [NSString stringWithFormat: @"INSERT INTO changebehaviors (badbh_id, bhname, notebooks_id, user_id, date) VALUES ('%@', (SELECT bhname FROM changebehaviors WHERE id = '%@'), '%@', '%@', (SELECT date('now')))", nextBBid, change_id, self.getCurrentNotebook, self.getCurrentUser];
+                            querySQL = [NSString stringWithFormat: @"INSERT INTO changebehaviors (badbh_id, bhname, notebooks_id, user_id, date) VALUES ('%@', (SELECT bhname FROM changebehaviors WHERE id = '%@'), '%@', '%@', (SELECT date('now','localtime')))", nextBBid, change_id, self.getCurrentNotebook, self.getCurrentUser];
                         }
                     }
                     
@@ -508,7 +508,7 @@ BOOL sucess;
     int count = 0;
     OutlineDBFunction *function = [[OutlineDBFunction alloc] init];
     for (int i = 0; i < oldArray.count; i++) {
-        NSString *querySQL = [NSString stringWithFormat: @"SELECT id FROM changebehaviors WHERE name='%@' AND notebooks_id='%@' AND date = (SELECT date('now'))", oldArray[i], self.getCurrentNotebook];
+        NSString *querySQL = [NSString stringWithFormat: @"SELECT id FROM changebehaviors WHERE name='%@' AND notebooks_id='%@' AND date = (SELECT date('now','localtime'))", oldArray[i], self.getCurrentNotebook];
         NSString *myid = [function getTableIdByQuery:querySQL];
         if ([myid length] == 0) {
             if ([newArray[i] length] > 0){
@@ -516,11 +516,11 @@ BOOL sucess;
                 NSString *mybadid = [function getTableIdByQuery:querySQL];
                 if (i == 2) count = 0;
                 if (count == 0) {
-                    querySQL = [NSString stringWithFormat: @"INSERT INTO changebehaviors (badbh_id, bhname, notebooks_id, user_id, date) VALUES ('%@','%@','%@', '%@', (SELECT date('now')))", mybadid, @"Less often/Not at all", self.getCurrentNotebook, self.getCurrentUser];
+                    querySQL = [NSString stringWithFormat: @"INSERT INTO changebehaviors (badbh_id, bhname, notebooks_id, user_id, date) VALUES ('%@','%@','%@', '%@', (SELECT date('now','localtime')))", mybadid, @"Less often/Not at all", self.getCurrentNotebook, self.getCurrentUser];
                     sucess = [sharedDB insertWithQuery:querySQL];
                     count ++;
                 }
-                querySQL = [NSString stringWithFormat: @"INSERT INTO changebehaviors (badbh_id, bhname, notebooks_id, user_id, date) VALUES ('%@','%@','%@', '%@', (SELECT date('now')))", mybadid, newArray[i], self.getCurrentNotebook, self.getCurrentUser];
+                querySQL = [NSString stringWithFormat: @"INSERT INTO changebehaviors (badbh_id, bhname, notebooks_id, user_id, date) VALUES ('%@','%@','%@', '%@', (SELECT date('now','localtime')))", mybadid, newArray[i], self.getCurrentNotebook, self.getCurrentUser];
                 sucess = [sharedDB insertWithQuery:querySQL];
             }
         } else {
