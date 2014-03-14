@@ -1,9 +1,9 @@
 //
 //  RewardsToEarnViewController.h
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Neil Gebhard and Sean Walsh on 1/17/14.
-//  Copyright (c) 2014 Neil Gebhard and Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

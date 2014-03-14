@@ -1,9 +1,9 @@
 //
 //  TreasureChestViewController.h
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Sean Walsh on 1/7/14.
-//  Copyright (c) 2014 Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

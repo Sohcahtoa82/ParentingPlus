@@ -1,9 +1,9 @@
 //
 //  ImageSelectorViewController.m
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Sean Walsh on 1/24/14.
-//  Copyright (c) 2014 Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import "ImageSelectorViewController.h"
@@ -20,7 +20,7 @@ NSString *imageSelected;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initializeialization
+        // Custom initialization
     }
     return self;
 }

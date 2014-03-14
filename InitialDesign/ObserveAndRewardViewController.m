@@ -1,9 +1,9 @@
 //
 //  ObserveAndRewardViewController.m
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Neil Gebhard on 1/17/14.
-//  Copyright (c) 2014 Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import "ObserveAndRewardViewController.h"
@@ -28,7 +28,7 @@ BOOL hasSavedObserveAndReward = NO;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initializeialization
+        // Custom initialization
     }
     return self;
 }

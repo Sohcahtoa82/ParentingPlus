@@ -1,9 +1,9 @@
 //
 //  Net.m
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Curtis Ruecker on 1/20/14.
-//  Copyright (c) 2014 Curtis Ruecker. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B.. All rights reserved.
 //
 
 #import "Net.h"
@@ -389,7 +389,7 @@ NSMutableArray * notificationQueue;
                 [record objectForKey:@"device_id"]];
     } else if ([tableName isEqualToString:@"savedreward"]) {
         //id INTEGER NOT NULL, notebooks_id INTEGER, rewards_id INTEGER, reward_status TEXT, date DAYTIME, user_id INTEGER, device_id TEXT
-        return [NSString stringWithFormat:@"UPDATE savedreward_sync SET reward_name = '%@', notebooks_id = %@ WHERE id = %@ AND user_id = %@ AND device_id = '%@';",
+        return [NSString stringWithFormat:@"UPDATE savedreward_sync SET reward_name = '%@', price = %@, notebooks_id = %@ WHERE id = %@ AND user_id = %@ AND device_id = '%@';",
                 [record objectForKey:@"reward_name"],
                 [record objectForKey:@"price"],
                 [record objectForKey:@"notebooks_id"],

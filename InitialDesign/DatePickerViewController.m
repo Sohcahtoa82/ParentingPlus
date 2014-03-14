@@ -3,7 +3,7 @@
 //  InitialDesign
 //
 //  Created by Sean Walsh on 2/13/14.
-//  Copyright (c) 2014 Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import "DatePickerViewController.h"

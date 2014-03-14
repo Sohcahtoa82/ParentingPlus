@@ -1,9 +1,9 @@
 //
 //  Net.h
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Curtis Ruecker on 1/20/14.
-//  Copyright (c) 2014 Curtis Ruecker. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 //  You should get the instance of net using:
 //

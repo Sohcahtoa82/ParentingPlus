@@ -1,6 +1,6 @@
 //
 //  ThingsToDoInsteadViewController.m
-//  initializeialDesign
+//  Parenting+
 //
 
 #import "ThingsToDoInsteadViewController.h"
@@ -25,7 +25,7 @@ BOOL hasSavedThingsToDoInstead = NO;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initializeialization
+        // Custom initialization
     }
     return self;
 }
@@ -264,6 +264,9 @@ BOOL hasSavedThingsToDoInstead = NO;
     
     [badBHArray addObject:_behaviorToChange1];
     [badBHArray addObject:_behaviorToChange1];
+    
+    _behaviorToChange2 = _behaviorToChange2? _behaviorToChange2 : @"";
+    
     [badBHArray addObject:_behaviorToChange2];
     [badBHArray addObject:_behaviorToChange2];
     

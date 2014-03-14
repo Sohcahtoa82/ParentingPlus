@@ -1,9 +1,9 @@
 //
 //  RewardPricesViewController.m
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Neil Gebhard on 1/17/14.
-//  Copyright (c) 2014 Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import "RewardPricesViewController.h"
@@ -34,7 +34,7 @@ BOOL hasSavedRewardPrices = NO;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initializeialization
+        // Custom initialization
     }
     return self;
 }
@@ -156,6 +156,7 @@ BOOL hasSavedRewardPrices = NO;
     UILabel *label = [[UILabel alloc] initWithFrame:labelrect];
     label.text = withLabel;
     label.textColor = [UIColor whiteColor];
+    label.font = [UIFont fontWithName:@"Helvetica Neue" size: 14.0 ];
     [_contentView addSubview:label];
     
     textFieldNumber++;
@@ -166,9 +167,9 @@ BOOL hasSavedRewardPrices = NO;
     textField.borderStyle = UITextBorderStyleRoundedRect;
     textField.textColor = [UIColor blackColor];
     textField.backgroundColor = [UIColor whiteColor];
-    textField.font = [UIFont systemFontOfSize:14.0];
-    textField.font = [UIFont fontWithName:@"Helvetica Neue" size: 14.0 ];
-    textField.placeholder = @"Enter Price";
+    textField.font = [UIFont systemFontOfSize:12.0];
+    textField.font = [UIFont fontWithName:@"Helvetica Neue" size: 12.0 ];
+    textField.placeholder = [NSString stringWithFormat:@"Enter Price %d", textFieldNumber ];
     textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     textField.returnKeyType = UIReturnKeyDone;
     textField.clearButtonMode = UITextFieldViewModeAlways;

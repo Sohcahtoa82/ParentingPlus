@@ -1,9 +1,9 @@
 //
 //  RewardsToEarnViewController.m
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Neil Gebhard on 1/17/14.
-//  Copyright (c) 2014 Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import "RewardsToEarnViewController.h"
@@ -35,7 +35,7 @@ BOOL hasSavedRewardsToEarn = NO;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initializeialization
+        // Custom initialization
     }
     return self;
 }
@@ -196,7 +196,7 @@ BOOL hasSavedRewardsToEarn = NO;
     textField.backgroundColor = [UIColor whiteColor];
     textField.font = [UIFont systemFontOfSize:14.0];
     textField.font = [UIFont fontWithName:@"Helvetica Neue" size: 14.0 ];
-    textField.placeholder = @"Enter Reward";
+    textField.placeholder = [NSString stringWithFormat:@"Enter Reward %d", textFieldNumber ];
     textField.returnKeyType = UIReturnKeyDone;
     textField.clearButtonMode = UITextFieldViewModeAlways;
     textField.delegate = self;
@@ -222,7 +222,7 @@ BOOL hasSavedRewardsToEarn = NO;
     textField.backgroundColor = [UIColor whiteColor];
     textField.font = [UIFont systemFontOfSize:14.0];
     textField.font = [UIFont fontWithName:@"Helvetica Neue" size: 14.0 ];
-    textField.placeholder = @"Enter Reward";
+    textField.placeholder = [NSString stringWithFormat:@"Enter Reward %d", textFieldNumber ];
     textField.returnKeyType = UIReturnKeyDone;
     textField.clearButtonMode = UITextFieldViewModeAlways;
     textField.delegate = self;

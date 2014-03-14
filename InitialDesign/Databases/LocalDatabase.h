@@ -3,7 +3,7 @@
 //  DatabaseModule
 //
 //  Created by Duy Tran on 12/15/13.
-//  Copyright (c) 2013 Duy Tran. All rights reserved.
+//  Copyright (c) 2013 Capstone Team B. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  initializeialDesign
+//  Parenting+
 //
-//  Created by Sean Walsh on 11/30/13.
-//  Copyright (c) 2013 Sean Walsh. All rights reserved.
+//  Created by Capstone Team B on 11/30/13.
+//  Copyright (c) 2013 Capstone Team B. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -18,7 +18,7 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:220.0/255.0 green:155.0/255.0 blue:50.0/255.0 alpha:1.0]];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Lobster" size:14], NSFontAttributeName, nil]];
      */
-    [Net sharedNet]; //initializeialize singleton Net class
+    [Net sharedNet]; //initialize singleton Net class
     [DBManager sharedDBManager];
     return YES;
 }

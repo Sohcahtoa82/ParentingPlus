@@ -1,9 +1,9 @@
 //
 //  AccountStatementViewController.h
-//  InitialDesign
+//  Parenting+
 //
 //  Created by Neil Gebhard on 2/15/14.
-//  Copyright (c) 2014 Azadi Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

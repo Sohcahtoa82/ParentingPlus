@@ -1,9 +1,9 @@
 //
-//  initializeialDesignTests.m
-//  initializeialDesignTests
+//  initialDesignTests.m
+//  Parenting+
 //
 //  Created by  Sean Walsh on 11/30/13.
-//  Copyright (c) 2013  Sean Walsh. All rights reserved.
+//  Copyright (c) 2013 Capstone Team B. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

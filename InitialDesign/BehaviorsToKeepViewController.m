@@ -1,6 +1,6 @@
 //
 //  BehaviorsToKeepViewController.m
-//  initializeialDesign
+//  Parenting+
 //
 
 #import "BehaviorsToKeepViewController.h"
@@ -31,7 +31,7 @@ BOOL hasSavedBehaviorsToKeep = NO;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initializeialization
+        // Custom initialization
     }
     return self;
 }

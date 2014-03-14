@@ -1,9 +1,9 @@
 //
 //  LoginViewControllerTutorials.m
-//  initializeialDesign
+//  Parenting+s
 //
 //  Created by David Wiza on 12/22/13.
-//  Copyright (c) 2013  Sean Walsh. All rights reserved.
+//  Copyright (c) 2013  Capstone Team B. All rights reserved.
 //
 
 #import "LoginViewControllerTutorials.h"
@@ -21,7 +21,7 @@ extern Tutorials *tutorials;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initializeialization
+        // Custom initialization
     }
     return self;
 }*/

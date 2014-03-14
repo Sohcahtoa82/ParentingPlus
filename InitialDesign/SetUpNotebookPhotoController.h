@@ -1,9 +1,9 @@
 //
 //  SetUpNotebookPhotoController.h
-//  initializeialDesignSetUpNotebookPicture
+//  Parenting+SetUpNotebookPicture
 //
 //  Created by TC on 12/1/13.
-//  Copyright (c) 2013 TC. All rights reserved.
+//  Copyright (c) 2013 Capstone Team B. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

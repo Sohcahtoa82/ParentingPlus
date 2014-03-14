@@ -1,6 +1,6 @@
 //
 //  BehaviorsToChangeViewController.m
-//  initializeialDesign
+//  Parenting+
 //
 // CAN'T ADD THE BOOL TO THIS CLASS WITHOUT LINKER ERROR...
 
@@ -24,7 +24,7 @@ BOOL hasSavedBehaviorsToChange = NO;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initializeialization
+        // Custom initialization
     }
     return self;
 }

@@ -1,9 +1,9 @@
 //
 //  NoteBooks.m
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Duy Tran on 1/16/14.
-//  Copyright (c) 2014 Duy Tran. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import "NoteBooks.h"
@@ -508,7 +508,7 @@ BOOL sucess;
     int count = 0;
     OutlineDBFunction *function = [[OutlineDBFunction alloc] init];
     for (int i = 0; i < oldArray.count; i++) {
-        NSString *querySQL = [NSString stringWithFormat: @"SELECT id FROM changebehaviors WHERE name='%@' AND notebooks_id='%@' AND date = (SELECT date('now','localtime'))", oldArray[i], self.getCurrentNotebook];
+        NSString *querySQL = [NSString stringWithFormat: @"SELECT id FROM changebehaviors WHERE bhname='%@' AND badbh_id in (select id from badbehaviors where notebooks_id ='%@') AND date = (SELECT date('now','localtime'))", oldArray[i], self.getCurrentNotebook];
         NSString *myid = [function getTableIdByQuery:querySQL];
         if ([myid length] == 0) {
             if ([newArray[i] length] > 0){

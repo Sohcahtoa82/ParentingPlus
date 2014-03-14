@@ -1,9 +1,9 @@
 //
 //  ThingsToDoInsteadViewControllerTutorials.m
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by David Wiza on 1/25/14.
-//  Copyright (c) 2014 Azadi Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import "ThingsToDoInsteadViewControllerTutorials.h"
@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initializeialization
+        // Custom initialization
     }
     return self;
 }

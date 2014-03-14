@@ -1,9 +1,9 @@
 //
 //  NoteBooks.h
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Duy Tran on 1/16/14.
-//  Copyright (c) 2014 Duy Tran. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

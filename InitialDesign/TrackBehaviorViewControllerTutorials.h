@@ -3,7 +3,7 @@
 //  InitialDesign
 //
 //  Created by David Wiza on 2/2/14.
-//  Copyright (c) 2014 Azadi Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import "TrackBehaviorViewController.h"

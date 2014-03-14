@@ -1,9 +1,9 @@
 //
 //  ImageSelectorViewController.h
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by Azadi Sean Walsh on 1/24/14.
-//  Copyright (c) 2014 Azadi Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,9 +1,9 @@
 //
 //  DashboardViewControllerTutorials.h
-//  initializeialDesign
+//  Parenting+
 //
 //  Created by David Wiza on 1/18/14.
-//  Copyright (c) 2014 Sean Walsh. All rights reserved.
+//  Copyright (c) 2014 Capstone Team B. All rights reserved.
 //
 
 #import "DashboardViewController.h"

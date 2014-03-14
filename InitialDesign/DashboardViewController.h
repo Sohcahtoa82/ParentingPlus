@@ -1,6 +1,6 @@
 //
 //  DashboardViewController.h
-//  initializeialDesign
+//  Parenting+
 //
 
 #import <UIKit/UIKit.h>

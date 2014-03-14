@@ -1,6 +1,6 @@
 //
 //  DashboardViewController.m
-//  initializeialDesign
+//  Parenting+
 //
 
 
@@ -44,7 +44,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initializeialization
+        // Custom initialization
     }
     return self;
 }
