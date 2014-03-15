@@ -27,7 +27,7 @@
 - (IBAction)createTextField;
 - (IBAction)createTextFieldCheck: (UITextField *) textfield;
 - (IBAction)keyboardAdapter: (UITextField*)textfieldName;
-
+- (IBAction) nextTextfield: (UITextField *) textField;
 
 - (IBAction)infoClick:(id)sender;
 

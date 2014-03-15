@@ -49,7 +49,7 @@ BOOL hasSavedBehaviorsToChange = NO;
 
 - (IBAction) textfieldChecker: (id)sender
 {
-    if (_behavior1Txt.text.length == 0)
+    if ([_behavior1Txt isFirstResponder])
     {
         [self fadeTextIn:_behavior2Txt withLabel:_behaviorLabel02];
     }
@@ -131,13 +131,13 @@ BOOL hasSavedBehaviorsToChange = NO;
     
     if ([[UIScreen mainScreen] bounds].size.height == 568 && [textfieldName isFirstResponder])
     {
-        //_nbScrollView.frame = CGRectMake(0,(-(textfieldName.frame.origin.y) + 150),320,700);
-        [_nbScrollview setContentOffset:CGPointMake(0, ((textfieldName.frame.origin.y) - 100)) animated: YES];
+
+        [_nbScrollview setContentOffset:CGPointMake(0, 50) animated: YES];
         [UIView commitAnimations];
     }
     if ([[UIScreen mainScreen] bounds].size.height <= 480 && [textfieldName isFirstResponder])
     {
-        //[self.view setFrame:CGRectMake(0,(-(textfieldName.frame.origin.y) + 150),320,580)];
+        // enter code for iphone 3.5 in
         [UIView commitAnimations];
     }
 }
@@ -150,12 +150,12 @@ BOOL hasSavedBehaviorsToChange = NO;
     
     if ([[UIScreen mainScreen] bounds].size.height == 568)
     {
-        //_nbScrollView.frame = CGRectMake(0,0,320, 443);
+
         [_nbScrollview setContentOffset:CGPointMake(0, 0) animated: YES];
         [UIView commitAnimations];
     }
     else {
-        //[self.view setFrame:CGRectMake(0,0,320,410)];
+         // enter code for iphone 3.5 in
         [UIView commitAnimations];
     }
     
@@ -173,6 +173,7 @@ BOOL hasSavedBehaviorsToChange = NO;
     }
     else  // No more text fields to fill in, hide the keyboard
     {
+        
         [_behavior2Txt resignFirstResponder];
         NSLog(@"last textfield done");
     }

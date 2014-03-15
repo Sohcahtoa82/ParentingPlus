@@ -143,13 +143,6 @@ BOOL hasSavedBehaviorsToKeep = NO;
     return NO;
 }
 
-// makes the screen raise up so that none of the text fields are blocked by the keyboard
-//- (BOOL)keyboardDidShow:(NSNotification *)notification
-//{
-//    [self keyboardAdapter];
-//   return TRUE;
-//}
-
 -(IBAction)keyboardAdapter: (UITextField*)textfieldName
 {
     [UIView beginAnimations:nil context:NULL];
@@ -157,13 +150,12 @@ BOOL hasSavedBehaviorsToKeep = NO;
     
     if ([[UIScreen mainScreen] bounds].size.height == 568 && [textfieldName isFirstResponder])
     {
-        //_nbScrollView.frame = CGRectMake(0,(-(textfieldName.frame.origin.y) + 150),320,700);
-        [_nbScrollView setContentOffset:CGPointMake(0, ((textfieldName.frame.origin.y) - 100)) animated: YES];
+        [_nbScrollView setContentOffset:CGPointMake(0, 50) animated: YES];
         [UIView commitAnimations];
     }
     if ([[UIScreen mainScreen] bounds].size.height <= 480 && [textfieldName isFirstResponder])
     {
-        //[self.view setFrame:CGRectMake(0,(-(textfieldName.frame.origin.y) + 150),320,580)];
+        // enter code for iphone 3.5 in
         [UIView commitAnimations];
     }
 }
@@ -176,12 +168,12 @@ BOOL hasSavedBehaviorsToKeep = NO;
     
     if ([[UIScreen mainScreen] bounds].size.height == 568)
     {
-        //_nbScrollView.frame = CGRectMake(0,0,320, 443);
+
         [_nbScrollView setContentOffset:CGPointMake(0, 0) animated: YES];
         [UIView commitAnimations];
     }
     else {
-        //[self.view setFrame:CGRectMake(0,0,320,410)];
+         // enter code for iphone 3.5 in
         [UIView commitAnimations];
     }
     

@@ -21,6 +21,7 @@
     NSMutableArray *notebookStatus;
     NSMutableArray *notebookId;
     BOOL isGoingToEditNotebook;
+    NSIndexPath *cellIndexPathForDeletingNotebook;
 }
 
 @property (nonatomic) BOOL useCustomCells;
@@ -55,6 +56,7 @@
 
     NSNotificationCenter * defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(syncHandle:) name:@"sync" object:nil];
+    dashboardTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     /*
     [[self navigationController] setNavigationBarHidden:NO animated:NO];
@@ -199,14 +201,6 @@
     
     LocalDatabase *db = [[LocalDatabase alloc] init];
     [db setCurrentNotebook: notebookId[indexPath.row]];
-    
-    //NSLog(@"Selected row at index path %d", indexPath.row);
-
-    // The selection is called after the tabBarController is loaded which causes
-    // the app to crash since the selected notebook is not set yet. So we will
-    // load the tabBarController manually to make sure that it loads after the
-    // selected notebook is set.
-    
     // Main is the name of the storyboard file where the modal view controller is.
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                          bundle:nil];
@@ -225,9 +219,6 @@
     }
     else
     {
-        //LocalDatabase *db = [[LocalDatabase alloc] init];
-        //[db setCurrentNotebook: notebookId[indexPath.row]];
-        
         isGoingToEditNotebook = TRUE;
         [self performSelector:@selector(segueToNotebookSetup)
                    withObject:nil
@@ -240,11 +231,12 @@
 }
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+
     switch (index) {
         case 0:
         {
-            // Edit button was pressed
             NSIndexPath *cellIndexPath = [self.dashboardTableView indexPathForCell:cell];
+            // Edit button was pressed
             LocalDatabase *db = [[LocalDatabase alloc] init];
             [db setCurrentNotebook: notebookId[cellIndexPath.row]];
             
@@ -258,28 +250,39 @@
         }
         case 1:
         {
-            // Delete button was pressed
-            NSIndexPath *cellIndexPath = [self.dashboardTableView indexPathForCell:cell];
-            
-            // DB deletion functionality.
-            LocalDatabase *db = [[LocalDatabase alloc] init];
-            [db setCurrentNotebook:notebookId[cellIndexPath.row]];
-            NSLog(@"current notebook from dashboard: %@", [db getCurrentNotebook]);
-            [db deleteCurrentNotebook];
-            
-            //[_testArray[cellIndexPath.section] removeObjectAtIndex:cellIndexPath.row];
-            [notebookTitles removeObjectAtIndex:cellIndexPath.row];
-            [notebookImages removeObjectAtIndex:cellIndexPath.row];
-            [notebookStatus removeObjectAtIndex:cellIndexPath.row];
-            [notebookId removeObjectAtIndex:cellIndexPath.row];
-            
-            // remove the associated cell from the Table View
-            [self.dashboardTableView deleteRowsAtIndexPaths:@[cellIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
-            
+            cellIndexPathForDeletingNotebook = [self.dashboardTableView indexPathForCell:cell];
+            // confirm if user wants to delete a notebook
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete Notebook" message:@"Are you sure you want to delete this notebook?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete", nil];
+            [alert show];
+
             break;
         }
         default:
             break;
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    //int price = [[rewardPrices objectAtIndex:rowNumberClicked] intValue];
+    
+    // delete notebook
+    if(buttonIndex == 1)
+    {
+        // DB deletion functionality.
+        LocalDatabase *db = [[LocalDatabase alloc] init];
+        [db setCurrentNotebook:notebookId[cellIndexPathForDeletingNotebook.row]];
+        NSLog(@"current notebook from dashboard: %@", [db getCurrentNotebook]);
+        [db deleteCurrentNotebook];
+        
+        //[_testArray[cellIndexPath.section] removeObjectAtIndex:cellIndexPath.row];
+        [notebookTitles removeObjectAtIndex:cellIndexPathForDeletingNotebook.row];
+        [notebookImages removeObjectAtIndex:cellIndexPathForDeletingNotebook.row];
+        [notebookStatus removeObjectAtIndex:cellIndexPathForDeletingNotebook.row];
+        [notebookId removeObjectAtIndex:cellIndexPathForDeletingNotebook.row];
+        
+        // remove the associated cell from the Table View
+        [self.dashboardTableView deleteRowsAtIndexPaths:@[cellIndexPathForDeletingNotebook] withRowAnimation:UITableViewRowAnimationLeft];
     }
 }
 

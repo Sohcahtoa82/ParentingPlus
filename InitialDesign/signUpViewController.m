@@ -151,6 +151,7 @@
     _passwordText.layer.borderWidth = 0.0f;
     _confirmPasswordText.layer.borderWidth = 0.0f;
     BOOL foundError = NO;
+    BOOL alertBoxShowed = NO;
     
     /* Upon clicking Create, make all
      * fields appear with a red border if the
@@ -168,7 +169,7 @@
         _lastName.layer.borderWidth = 1.0f;
         foundError = YES;
     }
-    // TODO: Enforce valid EMAIL address format.
+    
     // Something along the lines of: [A-Za-z0-9]+@[A-Za-z].[A-Za-z]{3}
     if (_emailText.text.length < 1)
     {
@@ -176,19 +177,40 @@
         _emailText.layer.borderWidth = 1.0f;
         foundError = YES;
         // Insert alert box to alert user of invalid EMAIL address format.
+    } else {
+        NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+        NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+        
+        BOOL isEmail = [emailTest evaluateWithObject:_emailText.text];
+        if(!isEmail) {
+            _emailText.layer.borderColor=[[UIColor redColor]CGColor];
+            _emailText.layer.borderWidth = 1.0f;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please enter a valid email address." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            foundError = YES;
+            alertBoxShowed = YES;
+        }
     }
-    // Enforce that passwords are length 8-12 characters.
-    if (_passwordText.text.length < 8 && _passwordText.text.length > 12)
+    
+    // Enforce that passwords are at least 6 characters long
+    if (_passwordText.text.length < 6 || _passwordText.text.length > 50)
     {
         _passwordText.layer.borderColor=[[UIColor redColor]CGColor];
         _passwordText.layer.borderWidth = 1.0f;
         foundError = YES;
-        // Insert alert box to state value range [8-12] characters.
+        if (!alertBoxShowed) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Your password must be at least 6 characters long." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            alertBoxShowed = YES;
+        }
     }
     if ([_confirmPasswordText.text isEqualToString:_passwordText.text] == NO)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error:" message:@"Passwords do not match" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
+        if (!alertBoxShowed) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Passwords do not match." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            alertBoxShowed = YES;
+        }
         _confirmPasswordText.layer.borderColor=[[UIColor redColor]CGColor];
         _confirmPasswordText.layer.borderWidth = 1.0f;
         _passwordText.layer.borderColor=[[UIColor redColor]CGColor];
@@ -201,6 +223,8 @@
     Net * sharedNet = [Net sharedNet];
     if ([sharedNet hasConnection] == FALSE) {
         NSLog(@"Failed to sign-up. No internet connection!!!");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please be connected to the internet to sign up for an account." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     } else if(!foundError) {
         [ldb signUpNewUser:_firstName.text andLastName:_lastName.text andEmail:_emailText.text andPassword:_passwordText.text andCallback:^(BOOL success, NSArray* errors) {
             if (success) {
@@ -209,6 +233,8 @@
             } else {
                 NSLog(@"UI: Signup was bad");
                 // TODO : Display the errors somehow
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Sorry, it looks like the email address already belongs to an existing account." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
             }
         }];
     }

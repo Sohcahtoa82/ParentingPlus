@@ -127,8 +127,6 @@
 - (NSString *) tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
     if (section == 0) {
-        //NSString *footer = [NSString stringWithFormat:@"Token Balance: %d", tokenCount];
-        //return footer;
         return @" ";
     }
     return nil;
@@ -144,7 +142,7 @@
     if (price <= tokenCount) {
         NSString *reward = [rewardTitles objectAtIndex:indexPath.row];
         NSString *alertMsg = [NSString stringWithFormat:@"%@", reward];
-        NSString *tokenCountMsg = [NSString stringWithFormat:@"Token count: %d", tokenCount];
+        NSString *tokenCountMsg = [NSString stringWithFormat:@"Token balance: %d", tokenCount];
         
         // confirm if user wants to redeem a reward
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertMsg message:tokenCountMsg delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save", @"Redeem", nil];

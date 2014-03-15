@@ -114,13 +114,13 @@ BOOL hasSavedRewardsToEarn = NO;
     
     if ([[UIScreen mainScreen] bounds].size.height == 568 && [textfieldName isFirstResponder])
     {
-        [_nbScrollView setContentOffset:CGPointMake(0, ((textfieldName.frame.origin.y) - 150)) animated: YES];
+        [_nbScrollView setContentOffset:CGPointMake(0, ((textfieldName.frame.origin.y) - 150)) animated: NO];
 
     }
     if([[UIScreen mainScreen] bounds].size.height <= 480 && [textfieldName isFirstResponder])
     {
         // add stuff for iphone 3.5in or iphone great than 4in
-        [UIView commitAnimations];
+        //[UIView commitAnimations];
     }
 }
 
@@ -133,23 +133,37 @@ BOOL hasSavedRewardsToEarn = NO;
     if ([[UIScreen mainScreen] bounds].size.height == 568)
     {
         [_nbScrollView setContentOffset:CGPointMake(0, 20) animated: YES];
-        [UIView commitAnimations];
+        //[UIView commitAnimations];
     }
     else {
         // add stuff for iphone 3.5in or iphone great than 4in
-        [UIView commitAnimations];
+        //[UIView commitAnimations];
     }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return YES;
+    
+    int tagNum = textField.tag;
+    tagNum = tagNum + 1;
+
+    [[self.view viewWithTag:tagNum] becomeFirstResponder];
+    
+    //[textField resignFirstResponder];
+    return NO;
 }
 
 // hide the keyboard when user taps outside of keyboard
 - (void) keyboardHide
 {
     [self.view endEditing:YES];
+}
+
+-(IBAction) nextTextfield: (UITextField *) textField
+{
+    int tagNum = textField.tag;
+    tagNum = tagNum + 1;
+    
+    [[self.view viewWithTag:tagNum] becomeFirstResponder];
 }
 
 -(void)viewDidLayoutSubviews {
@@ -167,7 +181,7 @@ BOOL hasSavedRewardsToEarn = NO;
 
 - (IBAction)createTextFieldCheck: (UITextField *) textfield
 {
-    if (textfield.text.length > 0 && textfield.tag == textFieldNumber)
+    if (textfield.tag == textFieldNumber)
     {
         rectPosY = rectPosY + 40;
         [self createTextField2:rectPosY];
@@ -197,11 +211,12 @@ BOOL hasSavedRewardsToEarn = NO;
     textField.font = [UIFont systemFontOfSize:14.0];
     textField.font = [UIFont fontWithName:@"Helvetica Neue" size: 14.0 ];
     textField.placeholder = [NSString stringWithFormat:@"Enter Reward %d", textFieldNumber ];
-    textField.returnKeyType = UIReturnKeyDone;
+    textField.returnKeyType = UIReturnKeyNext;
     textField.clearButtonMode = UITextFieldViewModeAlways;
     textField.delegate = self;
-    [textField addTarget:self action: @selector(createTextFieldCheck:) forControlEvents:UIControlEventEditingDidEnd];
+    [textField addTarget:self action: @selector(createTextFieldCheck:) forControlEvents:UIControlEventEditingDidBegin];
     [textField addTarget:self action: @selector(keyboardAdapter:) forControlEvents:UIControlEventEditingDidBegin];
+    [textField addTarget:self action: @selector(nextTextfield:) forControlEvents:UIControlEventEditingDidEndOnExit];
     _nbScrollView.contentSize = CGSizeMake(320, rectPosY + 100);
     _contentView.frame = CGRectMake(0, 0, 320, _nbScrollView.frame.size.height + 250);
     [textField setAlpha:0];
@@ -223,11 +238,12 @@ BOOL hasSavedRewardsToEarn = NO;
     textField.font = [UIFont systemFontOfSize:14.0];
     textField.font = [UIFont fontWithName:@"Helvetica Neue" size: 14.0 ];
     textField.placeholder = [NSString stringWithFormat:@"Enter Reward %d", textFieldNumber ];
-    textField.returnKeyType = UIReturnKeyDone;
+    textField.returnKeyType = UIReturnKeyNext;
     textField.clearButtonMode = UITextFieldViewModeAlways;
     textField.delegate = self;
-    [textField addTarget:self action: @selector(createTextFieldCheck:) forControlEvents:UIControlEventEditingDidEnd];
+    [textField addTarget:self action: @selector(createTextFieldCheck:) forControlEvents:UIControlEventEditingDidBegin];
     [textField addTarget:self action: @selector(keyboardAdapter:) forControlEvents:UIControlEventEditingDidBegin];
+    [textField addTarget:self action: @selector(nextTextfield:) forControlEvents:UIControlEventEditingDidEndOnExit];
     _nbScrollView.contentSize = CGSizeMake(320, rectPosY + 100);
     _contentView.frame = CGRectMake(0, 0, 320, _nbScrollView.frame.size.height + 250);
     [textField setAlpha:0];

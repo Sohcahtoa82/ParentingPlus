@@ -66,27 +66,18 @@ BOOL hasSavedThingsToDoInstead = NO;
     [[self navigationController] setNavigationBarHidden:NO animated:NO];
     
     // load labels and text boxes based on behaviors to change
-    _doInstead1Lbl.text = [NSString stringWithFormat:@"%@%@%@", @"Enter 1 - 2 behaviors your child may do instead of '", _behaviorToChange1, @"':"];
+    _doInstead1Lbl.text = [NSString stringWithFormat:@"%@%@%@", @"Enter 1 - 2 things your child may do instead of '", _behaviorToChange1, @"':"];
     
     if (_behaviorToChange2.length == 0) {
         _doInstead2Lbl.hidden = YES;
         _behavior3Txt.hidden = YES;
         _behavior4Txt.hidden = YES;
     } else {
-        _doInstead2Lbl.text = [NSString stringWithFormat:@"%@%@%@", @"Enter 1 - 2 behaviors your child may do instead of '", _behaviorToChange2, @"':"];
+        _doInstead2Lbl.text = [NSString stringWithFormat:@"%@%@%@", @"Enter 1 - 2 things your child may do instead of '", _behaviorToChange2, @"':"];
     }
     if ([[_notebook getBehaviorsToDoInstead] count] > 0) {
         [self LoadThingsToDoInstead];
         hasSavedThingsToDoInstead = YES;
-    }
-    
-    if (_behavior1Txt.text.length == 0)
-    {
-        [_behavior2Txt setAlpha:0];
-    }
-    if (_behavior3Txt.text.length == 0)
-    {
-        [_behavior4Txt setAlpha:0];
     }
     
     //Gesture recogizer to hide keyboard
@@ -167,7 +158,7 @@ BOOL hasSavedThingsToDoInstead = NO;
     // Does the first textfield have the focus? If yes, go to the next one
     if ([_behavior1Txt isFirstResponder])
     {
-        [self fadeTextIn:_behavior2Txt withLabel:nil];
+        //[self fadeTextIn:_behavior2Txt withLabel:nil];
         [_behavior2Txt becomeFirstResponder];
         return YES;
     }
@@ -178,7 +169,7 @@ BOOL hasSavedThingsToDoInstead = NO;
     }
     if ([_behavior3Txt isFirstResponder])
     {
-        [self fadeTextIn:_behavior4Txt withLabel:nil];
+        //[self fadeTextIn:_behavior4Txt withLabel:nil];
         [_behavior4Txt becomeFirstResponder];
         return YES;
     }

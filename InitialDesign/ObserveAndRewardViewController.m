@@ -53,15 +53,15 @@ BOOL hasSavedObserveAndReward = NO;
 
 - (IBAction) textfieldChecker: (id)sender
 {
-    if (_time2Txt.text.length == 0)
+    if ([_time1Txt isFirstResponder])
     {
         [self fadeTextIn:_time2Txt withLabel:_timeLabel02];
     }
-    if (_time3Txt.text.length == 0 && _time2Txt.text.length > 0)
+    if ([_time2Txt isFirstResponder])
     {
         [self fadeTextIn:_time3Txt withLabel:_timeLabel03];
     }
-    if (_time4Txt.text.length == 0 && _time3Txt.text.length > 0)
+    if ([_time3Txt isFirstResponder])
     {
         [self fadeTextIn:_time4Txt withLabel:_timeLabel04];
     }

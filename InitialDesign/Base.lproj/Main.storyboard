@@ -2079,7 +2079,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Things to do Instead 1" minimumFontSize="17" clearButtonMode="whileEditing" id="9S3-Vp-zkY">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Thing To Do Instead 1" minimumFontSize="17" clearButtonMode="whileEditing" id="9S3-Vp-zkY">
                                                 <rect key="frame" x="20" y="109" width="239" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2103,7 +2103,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <action selector="infoClick:" destination="l0f-qi-Yis" eventType="touchUpInside" id="txr-WK-hsn"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Things to do Instead 2" minimumFontSize="17" clearButtonMode="whileEditing" id="xxE-np-Lcq">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Thing To Do Instead 2" minimumFontSize="17" clearButtonMode="whileEditing" id="xxE-np-Lcq">
                                                 <rect key="frame" x="20" y="147" width="274" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2113,21 +2113,21 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <action selector="textFieldReturnNext:" destination="l0f-qi-Yis" eventType="editingDidEndOnExit" id="5jw-d3-HTZ"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Things to do Instead 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9ls-Q2-XQq">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Things To Do Instead 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9ls-Q2-XQq">
                                                 <rect key="frame" x="20" y="20" width="274" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Things to do Instead 2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="46j-zg-uFe">
-                                                <rect key="frame" x="20" y="189" width="274" height="100"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Things To Do Instead 2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="46j-zg-uFe">
+                                                <rect key="frame" x="20" y="185" width="274" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Things to do Instead 1" minimumFontSize="17" clearButtonMode="whileEditing" id="32u-FK-A8I">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Thing To Do Instead 1" minimumFontSize="17" clearButtonMode="whileEditing" id="32u-FK-A8I">
                                                 <rect key="frame" x="20" y="282" width="274" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2139,7 +2139,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <action selector="textfieldChecker:" destination="l0f-qi-Yis" eventType="editingDidEndOnExit" id="ryq-Dr-SXe"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Things to do Instead 2" minimumFontSize="17" clearButtonMode="whileEditing" id="yKX-Pt-cO6">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Thing To Do Instead 2" minimumFontSize="17" clearButtonMode="whileEditing" id="yKX-Pt-cO6">
                                                 <rect key="frame" x="20" y="320" width="274" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2481,9 +2481,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Rewards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LoB-iw-Uqf">
-                                                <rect key="frame" x="20" y="26" width="280" height="28"/>
+                                                <rect key="frame" x="20" y="37" width="280" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="24"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -2491,9 +2491,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <rect key="frame" x="20" y="78" width="245" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                 <connections>
                                                     <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="3nS-F0-NFN"/>
+                                                    <action selector="nextTextfield:" destination="NLA-xO-8oJ" eventType="editingDidEnd" id="Thd-H0-li8"/>
+                                                    <action selector="nextTextfield:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="svs-yS-59a"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="P4E-lf-Fyb">
@@ -2514,19 +2516,23 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <rect key="frame" x="20" y="116" width="281" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                 <connections>
                                                     <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="bMa-kI-siG"/>
+                                                    <action selector="nextTextfield:" destination="NLA-xO-8oJ" eventType="editingDidEnd" id="9As-UF-XuL"/>
+                                                    <action selector="nextTextfield:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="gEB-tL-RPC"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reward 3" minimumFontSize="17" clearButtonMode="whileEditing" id="5sd-7e-kQO" userLabel="Round Style Text Field - Enter Reward03">
                                                 <rect key="frame" x="20" y="154" width="280" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                 <connections>
-                                                    <action selector="createTextFieldCheck:" destination="NLA-xO-8oJ" eventType="editingDidEnd" id="9Xd-Hc-FGb"/>
+                                                    <action selector="createTextFieldCheck:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="be9-CH-es9"/>
                                                     <action selector="keyboardAdapter:" destination="NLA-xO-8oJ" eventType="editingDidBegin" id="hew-bK-Vf6"/>
+                                                    <action selector="nextTextfield:" destination="NLA-xO-8oJ" eventType="editingDidEndOnExit" id="ZJu-sM-qDO"/>
+                                                    <action selector="nextTextfield:" destination="NLA-xO-8oJ" eventType="editingDidEnd" id="yxr-y9-VHF"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -2596,14 +2602,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewards:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5ek-5K-SkA">
                                                 <rect key="frame" x="20" y="11" width="126" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="24"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fyz-z2-r1E">
                                                 <rect key="frame" x="229" y="11" width="66" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="24"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -2712,7 +2718,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="0.0" y="64" width="320" height="506"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Behavior to Change 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfK-97-nW8">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Behavior To Change 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfK-97-nW8">
                                                 <rect key="frame" x="23" y="110" width="274" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
@@ -2727,11 +2733,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <connections>
                                                     <action selector="keyboardAdapter:" destination="iyD-wW-rL7" eventType="editingDidBegin" id="6kN-A6-EQY"/>
                                                     <action selector="textFieldReturnNext:" destination="iyD-wW-rL7" eventType="editingDidEndOnExit" id="Oj4-SF-thI"/>
-                                                    <action selector="textfieldChecker:" destination="iyD-wW-rL7" eventType="editingDidEndOnExit" id="EmD-Rp-uSD"/>
                                                     <action selector="textfieldChecker:" destination="iyD-wW-rL7" eventType="editingDidBegin" id="Szd-TJ-1fI"/>
+                                                    <action selector="textfieldChecker:" destination="iyD-wW-rL7" eventType="touchUpInside" id="YZY-OD-bVQ"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Behavior to Change 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LqH-AS-FC8">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Behavior To Change 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LqH-AS-FC8">
                                                 <rect key="frame" x="23" y="201" width="274" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
@@ -2913,7 +2919,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2537" y="-898"/>
         </scene>
-        <!--Behaviors To Keep View Controller Tutorials - Behaviors to Keep-->
+        <!--Behaviors To Keep View Controller Tutorials - Behaviors To Keep-->
         <scene sceneID="Lxr-Jw-HyI">
             <objects>
                 <viewController id="01i-Mg-Tre" customClass="BehaviorsToKeepViewControllerTutorials" sceneMemberID="viewController">
@@ -2946,7 +2952,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Behavior to Keep 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c7q-AW-vFw">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Behavior To Keep 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c7q-AW-vFw">
                                                 <rect key="frame" x="20" y="68" width="274" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
@@ -2961,12 +2967,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <connections>
                                                     <action selector="keyboardAdapter:" destination="01i-Mg-Tre" eventType="editingDidBegin" id="kRd-Wo-Wmh"/>
                                                     <action selector="textFieldReturnNext:" destination="01i-Mg-Tre" eventType="editingDidEndOnExit" id="bdV-gk-c2Q"/>
-                                                    <action selector="textfieldChecker:" destination="01i-Mg-Tre" eventType="editingDidEnd" id="SHa-4F-c9l"/>
-                                                    <action selector="textfieldChecker:" destination="01i-Mg-Tre" eventType="editingDidEndOnExit" id="ffN-gr-xzK"/>
-                                                    <action selector="textfieldChecker:" destination="01i-Mg-Tre" eventType="editingDidBegin" id="uIX-r4-nnp"/>
+                                                    <action selector="textfieldChecker:" destination="01i-Mg-Tre" eventType="editingDidBegin" id="Ryc-BC-DKc"/>
+                                                    <action selector="textfieldChecker:" destination="01i-Mg-Tre" eventType="editingDidEnd" id="TQz-q9-HIR"/>
+                                                    <action selector="textfieldChecker:" destination="01i-Mg-Tre" eventType="touchUpInside" id="Zwh-Tv-3gn"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Behavior to Keep 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ndO-ZP-RzD">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Behavior To Keep 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ndO-ZP-RzD">
                                                 <rect key="frame" x="20" y="161" width="274" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
@@ -2986,7 +2992,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <action selector="textfieldChecker:" destination="01i-Mg-Tre" eventType="editingDidEndOnExit" id="zR9-Zp-EgB"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Behavior to Keep 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hld-Y8-MJD">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Behavior To Keep 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hld-Y8-MJD">
                                                 <rect key="frame" x="20" y="254" width="274" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
@@ -3023,7 +3029,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" red="0.16066029770000001" green="0.61243022629999999" blue="0.8087930485" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Behaviors to Keep" id="aCk-g2-9H3">
+                    <navigationItem key="navigationItem" title="Behaviors To Keep" id="aCk-g2-9H3">
                         <barButtonItem key="rightBarButtonItem" image="x" id="jKe-Qd-xXx">
                             <connections>
                                 <action selector="closeButton:" destination="01i-Mg-Tre" id="ou9-n1-tmY"/>
