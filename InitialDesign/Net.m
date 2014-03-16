@@ -226,7 +226,7 @@ NSMutableArray * notificationQueue;
     NSDictionary * reply = [NSJSONSerialization JSONObjectWithData:replyData options:0 error:nil];
     NSLog(@"SYNC END REPLY: %@",reply);
     if (reply != nil) {
-        //[self setLastSync:[reply objectForKey:@"last_sync"] forUserId:userId];
+        [self setLastSync:[reply objectForKey:@"last_sync"] forUserId:userId];
         return YES;
     } else {
         NSLog(@"SYNC: SyncEnd failure");
@@ -243,7 +243,7 @@ NSMutableArray * notificationQueue;
     //NSLog(@"Insert generator: record = %@",record);
     if ([tableName isEqualToString:@"notebooks"]) {
         //id INTEGER NOT NULL, book_status TEXT, book_name TEXT, age INTEGER, tokens INTEGER, picture TEXT, date_create DAYTIME, user_id INTEGER, device_id TEXT
-        return [NSString stringWithFormat:@"INSERT INTO notebooks_sync (book_status, book_name, age, tokens, id, user_id, device_id) VALUES ('%@', '%@', %@, %@, %@, %@, '%@');",
+        return [NSString stringWithFormat:@"INSERT INTO notebooks_sync (book_status, book_name, age, tokens, id, user_id, device_id) VALUES ('%@', '%@', '%@', %@, %@, %@, '%@');",
                 [record objectForKey:@"book_status"],
                 [record objectForKey:@"book_name"],
                 [record objectForKey:@"age"],
@@ -372,7 +372,7 @@ NSMutableArray * notificationQueue;
 -(NSString *) updateStatementForTable:(NSString *)tableName withRecord:(NSDictionary *)record {
     if ([tableName isEqualToString:@"notebooks"]) {
         //id INTEGER NOT NULL, book_status TEXT, book_name TEXT, age INTEGER, tokens INTEGER, picture TEXT, date_create DAYTIME, user_id INTEGER, device_id TEXT
-        return [NSString stringWithFormat:@"UPDATE notebooks_sync SET book_status = '%@', book_name = '%@', age = %@, tokens = %@ WHERE id = %@;",
+        return [NSString stringWithFormat:@"UPDATE notebooks_sync SET book_status = '%@', book_name = '%@', age = '%@', tokens = %@ WHERE id = %@;",
                 [record objectForKey:@"book_status"],
                 [record objectForKey:@"book_name"],
                 [record objectForKey:@"age"],
