@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>09D54C9F-C87C-4256-892A-8E32E23CA1DE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>InitialDesign</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>09A3EC93-7BDF-4C7C-98B0-05A43FF48050</key>
+		<string>http://projects.cecs.pdx.edu/git/kidzplan</string>
+		<key>8E0453EA-B6D0-4251-9D8A-987F3EDF0A65</key>
+		<string>https://github.com/rueckerc/ParentingPlus.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Main-Project/Design/UI Prototypes/InitialDesign/InitialDesign.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>09A3EC93-7BDF-4C7C-98B0-05A43FF48050</key>
+		<string>../../../../../..</string>
+		<key>8E0453EA-B6D0-4251-9D8A-987F3EDF0A65</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rueckerc/ParentingPlus.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>09A3EC93-7BDF-4C7C-98B0-05A43FF48050</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8E0453EA-B6D0-4251-9D8A-987F3EDF0A65</string>
+			<key>IDESourceControlWCCName</key>
+			<string>InitialDesign</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>09A3EC93-7BDF-4C7C-98B0-05A43FF48050</string>
+			<key>IDESourceControlWCCName</key>
+			<string>kidzplan</string>
+		</dict>
+	</array>
+</dict>
+</plist>
