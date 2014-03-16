@@ -107,7 +107,12 @@
     NSMutableArray *trackBehaviors = [odb getTrackBehaviorWhen:dateString];
     if (trackBehaviors.count != 0) {
         for(id obj in trackBehaviors) {
-            [rewardNames addObject:obj[@"bhname"]];
+            if ([obj[@"bhname"] isEqualToString:@"Less often/Not at all"]) {
+                NSString *new = [NSString stringWithFormat:@"Less/Not %@",obj[@"badname"]];
+                [rewardNames addObject:new];
+            } else {
+                [rewardNames addObject:obj[@"bhname"]];
+            }
             NSString *tokensEarnedFromBehavior = [NSString stringWithFormat:@"+%@", obj[@"token_earned"]];
             [rewardPrices addObject:tokensEarnedFromBehavior];
             [rewardsStatuses addObject:@"earned"];

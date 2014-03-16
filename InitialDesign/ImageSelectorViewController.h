@@ -25,4 +25,5 @@
 - (IBAction)image4Clk:(id)sender;
 - (IBAction)saveAndContinueClk:(id)sender;
 
+- (IBAction)goBackClk:(id)sender;
 @end

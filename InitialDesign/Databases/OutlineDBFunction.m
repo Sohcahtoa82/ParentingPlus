@@ -484,7 +484,7 @@
         sqlite3_finalize(checkstatement);
     }
     
-    querySQL = [NSString stringWithFormat: @"SELECT bhname, time1, time2, time3, time4 FROM changebehaviors C, trackchangebehaviors T WHERE C.id = T.changebehaviors_id AND time_record = '%@' AND T.notebooks_id = '%@';",date,self.getCurrentNotebook];
+    querySQL = [NSString stringWithFormat: @"SELECT bhname, name as badname, time1, time2, time3, time4 FROM changebehaviors C, trackchangebehaviors T, badbehaviors B WHERE C.badbh_id = B.id AND C.id = T.changebehaviors_id AND time_record = '%@' AND T.notebooks_id = '%@';",date,self.getCurrentNotebook];
     
     query_stmt = [querySQL UTF8String];
     
@@ -495,12 +495,14 @@
             NSMutableDictionary *oneRecord = [[NSMutableDictionary alloc] init];
             
             NSString *bhname = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 0)];
-            NSString *time1 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 1)];
-            NSString *time2 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 2)];
-            NSString *time3 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 3)];
-            NSString *time4 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 4)];
+            NSString *badname = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 1)];
+            NSString *time1 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 2)];
+            NSString *time2 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 3)];
+            NSString *time3 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 4)];
+            NSString *time4 = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(checkstatement, 5)];
             
             [oneRecord setObject:bhname forKey:@"bhname"];
+            [oneRecord setObject:badname forKey:@"badname"];
             int count = 0;
             if([time1 isEqualToString:@"no-sticker-100px.png"] == FALSE)
                 count++;

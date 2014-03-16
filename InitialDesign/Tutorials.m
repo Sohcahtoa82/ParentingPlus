@@ -18,7 +18,7 @@ TutorialBalloon *balloon;
     [self addTutorial:TUT_USER_NAME :@"Enter your user name"];
     [self addTutorial:TUT_PASSWORD :@"Enter your password"];
     [self addTutorial:TUT_PRESS_LOGIN :@"Touch the login button"];
-    [self addTutorial:TUT_FIRST_TIME :@"Is this your first time using Parenting Plus?  Tap the Sign Up button to create an account!"];
+    [self addTutorial:TUT_FIRST_TIME :@"Is this your first time using Parenting+?  Tap the Sign Up button to create an account!"];
     [self addTutorial:TUT_NEED_TO_CREATE_NOTEBOOK :@"Create your first notebook by clicking the + button in the corner."];
     [self addTutorial:TUT_BEHAVIORS_KEEP :@"Think of up to three good behaviors that you want your child to continue doing and enter them."];
     [self addTutorial:TUT_BEHAVIORS_CHANGE :@"Think of up to two bad behaviors that you want your child to stop doing and enter them."];

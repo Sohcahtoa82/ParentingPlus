@@ -48,6 +48,11 @@ NSString *imageSelected;
      */
 }
 
+- (IBAction)goBackClk:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
     if ([identifier isEqualToString:@"savePhotoSelectionReturnToNotebookSetup"])
@@ -61,10 +66,8 @@ NSString *imageSelected;
 {
     if ([segue.identifier isEqualToString:@"savePhotoSelectionReturnToNotebookSetup"])
     {
-        
         SetUpNotebookPhotoController *controller = (SetUpNotebookPhotoController*)segue.destinationViewController;
         controller.chosenImage = imageSelected;
-         
     }
 }
 

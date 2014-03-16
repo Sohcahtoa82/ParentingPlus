@@ -318,7 +318,7 @@ BOOL serverRequest;
             }
             
             // Create Empty table notebooks
-            sql_stmt = "CREATE TABLE IF NOT EXISTS notebooks (id INTEGER PRIMARY KEY AUTOINCREMENT,  book_status TEXT, book_name TEXT NOT NULL, age INTEGER, tokens INTEGER, picture BLOB, date_create DAYTIME, user_id INTEGER, picture_updated BOOL DEFAULT FALSE, FOREIGN KEY(user_id) REFERENCES users(id), UNIQUE (book_name, id, user_id))";
+            sql_stmt = "CREATE TABLE IF NOT EXISTS notebooks (id INTEGER PRIMARY KEY AUTOINCREMENT,  book_status TEXT, book_name TEXT NOT NULL, age DAYTIME, tokens INTEGER, picture BLOB, date_create DAYTIME, user_id INTEGER, picture_updated BOOL DEFAULT FALSE, FOREIGN KEY(user_id) REFERENCES users(id), UNIQUE (book_name, id, user_id))";
             if (sqlite3_exec(kidzplanDB, sql_stmt, NULL, NULL, &err) != SQLITE_OK) {
                 NSLog(@"Failed to create table notebooks");
             }
